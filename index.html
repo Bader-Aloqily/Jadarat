@@ -1156,10 +1156,10 @@ function renderFeaturedJobs() {
             </div>
             <div class="job-meta">
                 <span class="job-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>${job.location[currentLang]}</span>
-                <span class="job-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>${translations.jobTypeLabels[currentLang][job.jobType]}</span>
+                <span class="job-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>${translations.typeLabels[currentLang][job.jobType]}</span>
             </div>
             <div class="job-tags">
-                <span class="job-tag type-${job.jobType}">${translations.jobTypeLabels[currentLang][job.jobType]}</span>
+                <span class="job-tag type-${job.jobType}">${translations.typeLabels[currentLang][job.jobType]}</span>
                 <span class="job-tag sector-${job.sector}">${translations.sectorLabels[currentLang][job.sector]}</span>
             </div>
             <div class="job-card-applicants">
