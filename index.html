@@ -1036,32 +1036,32 @@ let savedJobs = JSON.parse(sessionStorage.getItem('savedJobs') || '[]');
 
 // Company Logos as inline SVG data URLs (always work, no external dependencies)
 const companyLogos = {
-    // Aramco - Blue/Green gradient
-    'أرامكو السعودية': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='a1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23006D5B'/%3E%3Cstop offset='100%25' stop-color='%23004D40'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a1)' width='100' height='100' rx='12'/%3E%3Ctext x='50' y='58' font-family='Arial,sans-serif' font-size='28' font-weight='bold' fill='white' text-anchor='middle'%3EAramco%3C/text%3E%3C/svg%3E",
-    'Saudi Aramco': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='a2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23006D5B'/%3E%3Cstop offset='100%25' stop-color='%23004D40'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a2)' width='100' height='100' rx='12'/%3E%3Ctext x='50' y='58' font-family='Arial,sans-serif' font-size='28' font-weight='bold' fill='white' text-anchor='middle'%3EAramco%3C/text%3E%3C/svg%3E",
-    // SABIC - Blue
-    'سابك': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230066B3' width='100' height='100' rx='12'/%3E%3Ctext x='50' y='58' font-family='Arial,sans-serif' font-size='28' font-weight='bold' fill='white' text-anchor='middle'%3ESABIC%3C/text%3E%3C/svg%3E",
-    'SABIC': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230066B3' width='100' height='100' rx='12'/%3E%3Ctext x='50' y='58' font-family='Arial,sans-serif' font-size='28' font-weight='bold' fill='white' text-anchor='middle'%3ESABIC%3C/text%3E%3C/svg%3E",
-    // STC - Purple
-    'STC': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='s1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%234F2D7F'/%3E%3Cstop offset='100%25' stop-color='%23702F8A'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23s1)' width='100' height='100' rx='12'/%3E%3Ctext x='50' y='62' font-family='Arial,sans-serif' font-size='36' font-weight='bold' fill='white' text-anchor='middle'%3Estc%3C/text%3E%3C/svg%3E",
-    // NEOM - Black/Gold
-    'نيوم': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23000000' width='100' height='100' rx='12'/%3E%3Ctext x='50' y='58' font-family='Arial,sans-serif' font-size='28' font-weight='bold' fill='%23C9A227' text-anchor='middle'%3ENEOM%3C/text%3E%3C/svg%3E",
-    'NEOM': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23000000' width='100' height='100' rx='12'/%3E%3Ctext x='50' y='58' font-family='Arial,sans-serif' font-size='28' font-weight='bold' fill='%23C9A227' text-anchor='middle'%3ENEOM%3C/text%3E%3C/svg%3E",
+    // Aramco - Real logo
+    'أرامكو السعودية': "https://companieslogo.com/img/orig/2222.SR_BIG-932b4410.png?t=1720244490",
+    'Saudi Aramco': "https://companieslogo.com/img/orig/2222.SR_BIG-932b4410.png?t=1720244490",
+    // SABIC - Real logo
+    'سابك': "https://companieslogo.com/img/orig/2010.SR-73af2558.png?t=1720244490",
+    'SABIC': "https://companieslogo.com/img/orig/2010.SR-73af2558.png?t=1720244490",
+    // STC - Real logo
+    'STC': "https://companieslogo.com/img/orig/7010.SR-38ef776f.png?t=1751524154",
+    // NEOM - Real logo
+    'نيوم': "https://images.seeklogo.com/logo-png/35/1/neom-logo-png_seeklogo-358578.png",
+    'NEOM': "https://images.seeklogo.com/logo-png/35/1/neom-logo-png_seeklogo-358578.png",
     // Ministry of Health - Green
     'وزارة الصحة': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23006B3F' width='100' height='100' rx='12'/%3E%3Cpath d='M50 25 L50 75 M35 50 L65 50' stroke='white' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E",
     'Ministry of Health': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23006B3F' width='100' height='100' rx='12'/%3E%3Cpath d='M50 25 L50 75 M35 50 L65 50' stroke='white' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E",
     // Ministry of Education - Blue/Green
     'وزارة التعليم': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230D9488' width='100' height='100' rx='12'/%3E%3Cpath d='M50 25 L75 40 L50 55 L25 40 Z' fill='white'/%3E%3Crect x='35' y='45' width='30' height='25' fill='white' rx='2'/%3E%3C/svg%3E",
     'Ministry of Education': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230D9488' width='100' height='100' rx='12'/%3E%3Cpath d='M50 25 L75 40 L50 55 L25 40 Z' fill='white'/%3E%3Crect x='35' y='45' width='30' height='25' fill='white' rx='2'/%3E%3C/svg%3E",
-    // Al Rajhi Bank - Blue
-    'مصرف الراجحي': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23003D79' width='100' height='100' rx='12'/%3E%3Ctext x='50' y='55' font-family='Arial,sans-serif' font-size='18' font-weight='bold' fill='white' text-anchor='middle'%3EAl Rajhi%3C/text%3E%3Ctext x='50' y='72' font-family='Arial,sans-serif' font-size='14' fill='%2380B4E0' text-anchor='middle'%3EBank%3C/text%3E%3C/svg%3E",
-    'Al Rajhi Bank': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23003D79' width='100' height='100' rx='12'/%3E%3Ctext x='50' y='55' font-family='Arial,sans-serif' font-size='18' font-weight='bold' fill='white' text-anchor='middle'%3EAl Rajhi%3C/text%3E%3Ctext x='50' y='72' font-family='Arial,sans-serif' font-size='14' fill='%2380B4E0' text-anchor='middle'%3EBank%3C/text%3E%3C/svg%3E",
+    // Al Rajhi Bank - Real logo
+    'مصرف الراجحي': "https://companieslogo.com/img/orig/1120.SR_BIG-b2f7c182.png?t=1720244490",
+    'Al Rajhi Bank': "https://companieslogo.com/img/orig/1120.SR_BIG-b2f7c182.png?t=1720244490",
     // SDAIA - Purple/Teal
     'سدايا': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='sd1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%235B2C6F'/%3E%3Cstop offset='100%25' stop-color='%230D9488'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23sd1)' width='100' height='100' rx='12'/%3E%3Ctext x='50' y='58' font-family='Arial,sans-serif' font-size='24' font-weight='bold' fill='white' text-anchor='middle'%3ESDAIA%3C/text%3E%3C/svg%3E",
     'SDAIA': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='sd2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%235B2C6F'/%3E%3Cstop offset='100%25' stop-color='%230D9488'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23sd2)' width='100' height='100' rx='12'/%3E%3Ctext x='50' y='58' font-family='Arial,sans-serif' font-size='24' font-weight='bold' fill='white' text-anchor='middle'%3ESDAIA%3C/text%3E%3C/svg%3E",
-    // Almarai - Blue
-    'المراعي': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230054A6' width='100' height='100' rx='12'/%3E%3Ctext x='50' y='58' font-family='Arial,sans-serif' font-size='22' font-weight='bold' fill='white' text-anchor='middle'%3EAlmarai%3C/text%3E%3C/svg%3E",
-    'Almarai': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230054A6' width='100' height='100' rx='12'/%3E%3Ctext x='50' y='58' font-family='Arial,sans-serif' font-size='22' font-weight='bold' fill='white' text-anchor='middle'%3EAlmarai%3C/text%3E%3C/svg%3E",
+    // Almarai - Real logo
+    'المراعي': "https://companieslogo.com/img/orig/2280.SR_BIG-328156cd.png?t=1746712284",
+    'Almarai': "https://companieslogo.com/img/orig/2280.SR_BIG-328156cd.png?t=1746712284",
     // Mobily - Purple/Pink
     'موبايلي': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='m1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%236B0F6B'/%3E%3Cstop offset='100%25' stop-color='%23C2185B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23m1)' width='100' height='100' rx='12'/%3E%3Ctext x='50' y='58' font-family='Arial,sans-serif' font-size='22' font-weight='bold' fill='white' text-anchor='middle'%3EMobily%3C/text%3E%3C/svg%3E",
     'Mobily': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='m2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%236B0F6B'/%3E%3Cstop offset='100%25' stop-color='%23C2185B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23m2)' width='100' height='100' rx='12'/%3E%3Ctext x='50' y='58' font-family='Arial,sans-serif' font-size='22' font-weight='bold' fill='white' text-anchor='middle'%3EMobily%3C/text%3E%3C/svg%3E",
@@ -1076,7 +1076,10 @@ const companyLogos = {
     'Security Forces Hospital Dammam': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='sfh2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23016664'/%3E%3Cstop offset='100%25' stop-color='%230D9488'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23sfh2)' width='100' height='100' rx='12'/%3E%3Cpath d='M50 25 L50 75 M35 50 L65 50' stroke='white' stroke-width='8' stroke-linecap='round'/%3E%3Cpath d='M30 30 L40 25 L40 35 Z' fill='%23CFB485'/%3E%3C/svg%3E",
     // Tourism Authority - Blue/Palm
     'هيئة السياحة': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='ta1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23016664'/%3E%3Cstop offset='100%25' stop-color='%23134e4a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23ta1)' width='100' height='100' rx='12'/%3E%3Cpath d='M50 75 L50 45 M50 45 Q35 35 30 25 M50 45 Q65 35 70 25 M50 45 Q40 30 25 30 M50 45 Q60 30 75 30 M50 45 Q45 25 50 15 M50 45 Q55 25 50 15' stroke='%23CFB485' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E",
-    'Tourism Authority': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='ta2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23016664'/%3E%3Cstop offset='100%25' stop-color='%23134e4a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23ta2)' width='100' height='100' rx='12'/%3E%3Cpath d='M50 75 L50 45 M50 45 Q35 35 30 25 M50 45 Q65 35 70 25 M50 45 Q40 30 25 30 M50 45 Q60 30 75 30 M50 45 Q45 25 50 15 M50 45 Q55 25 50 15' stroke='%23CFB485' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"
+    'Tourism Authority': "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='ta2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23016664'/%3E%3Cstop offset='100%25' stop-color='%23134e4a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23ta2)' width='100' height='100' rx='12'/%3E%3Cpath d='M50 75 L50 45 M50 45 Q35 35 30 25 M50 45 Q65 35 70 25 M50 45 Q40 30 25 30 M50 45 Q60 30 75 30 M50 45 Q45 25 50 15 M50 45 Q55 25 50 15' stroke='%23CFB485' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E",
+    // Siemens - Real logo
+    'سيمنز': "https://companieslogo.com/img/orig/SIE.DE_BIG-8513f49c.png?t=1720244493",
+    'Siemens': "https://companieslogo.com/img/orig/SIE.DE_BIG-8513f49c.png?t=1720244493"
 };
 
 // Category icons
