@@ -198,7 +198,7 @@
         .job-card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; border-top: 1px solid var(--neutral-100); }
         .job-salary { font-weight: 700; color: var(--primary-700); font-size: 1rem; display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
         .job-salary span { font-weight: 400; color: var(--neutral-400); font-size: 0.85rem; }
-        .sar-symbol { display: inline-block; width: 16px; height: 16px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cpath fill='%23666' d='M738.4 329.4c-43.7-24.8-93.4-37.9-147.7-38.9V164.2h-72.5v124.5c-1.2 0-2.4-.1-3.6-.1-57 0-109.5 13.4-156 39.9-46.5 26.5-83.3 63.9-109.4 111.3-26.1 47.3-39.3 101.6-39.3 161.4 0 61.2 13.7 116.2 40.7 163.5 27 47.3 64.6 84.3 111.8 110 47.2 25.7 101.4 38.6 161.1 38.6h.4c55.7-.4 106.7-13.5 151.5-38.9 44.8-25.4 80.1-61.4 104.9-107 24.8-45.6 37.5-98.5 37.8-157.2v-3.2h-72.5v3.2c-.2 43.5-9.3 82.3-27 115.3-17.7 33-42.3 58.8-73.1 76.6-30.8 17.8-66.2 26.9-105.3 27-2.1 0-4.1 0-6.2-.1V562.7h157.3v-72.5H534.1V355c1.2 0 2.4.1 3.6.1 37.9.4 72.2 9.1 101.9 26 29.7 16.9 53.1 40.9 69.5 71.4 16.4 30.5 24.9 66 25.3 105.4v3.2H807v-3.2c-.4-57.3-13.3-108.8-38.4-153.1-25.1-44.3-59.8-79.2-103.2-103.4zM461.6 829c-37.6-.3-71.4-9.2-100.5-26.5-29.1-17.3-52-41.6-68.1-72.3-16.1-30.7-24.4-66.2-24.6-105.6v-3.2h-72.5v3.2c.3 57 13.2 108.3 38.3 152.6 25.1 44.3 60.1 79.2 103.9 103.8 43.8 24.6 93.8 37.4 148.7 38.1V829h-25.2zm0-266.3V355.1c-36.5.7-69.4 9.6-97.8 26.4-28.4 16.8-50.8 40.6-66.5 70.7-15.7 30.1-23.9 64.9-24.2 103.5v3.2h72.5v-3.2c.3-26.7 5.7-50.4 16-70.5 10.3-20.1 24.6-35.8 42.5-46.6 14.2-8.6 30.1-14.2 47.5-16.7v141.8h10z'/%3E%3C/svg%3E"); background-size: contain; background-repeat: no-repeat; vertical-align: middle; }
+        .sar-symbol { display: inline-block; width: 16px; height: 16px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1124.14 1256.39'%3E%3Cpath fill='%230d9488' d='M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z'/%3E%3Cpath fill='%230d9488' d='M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z'/%3E%3C/svg%3E"); background-size: contain; background-repeat: no-repeat; vertical-align: middle; }
         .job-date { font-size: 0.85rem; color: var(--neutral-400); }
         .apply-btn { padding: 10px 24px; background: linear-gradient(135deg, var(--primary-600), var(--primary-700)); color: white; border: none; border-radius: var(--radius-md); font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.2s; font-family: inherit; }
         .apply-btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
@@ -338,8 +338,10 @@
 
         @media (max-width: 1024px) {
             .main-content { grid-template-columns: 1fr; }
-            .filters-sidebar { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 1000; border-radius: 0; display: none; overflow-y: auto; padding-bottom: 100px; }
+            .filters-sidebar { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 1001; border-radius: 0; display: none; overflow-y: auto; padding-bottom: 100px; }
             .filters-sidebar.open { display: block; }
+            .filter-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; backdrop-filter: blur(4px); }
+            .filter-backdrop.open { display: block; }
             .filters-sidebar .filters-header { position: sticky; top: 0; z-index: 10; margin: -24px -24px 24px -24px; padding: 20px 24px; border-bottom: 1px solid var(--neutral-200); }
             .filters-close-mobile { display: flex; }
             .show-results-btn { display: block; position: sticky; bottom: 20px; margin-top: 24px; box-shadow: 0 -4px 20px rgba(0,0,0,0.1); }
@@ -784,6 +786,7 @@
             </div>
         </section>
         <main class="main-content">
+            <div class="filter-backdrop" id="filterBackdrop" onclick="toggleFilters()"></div>
             <aside class="filters-sidebar" id="filtersSidebar">
                 <div class="filters-header">
                     <span class="filters-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg><span data-ar="تصفية النتائج" data-en="Filter Results">تصفية النتائج</span></span>
@@ -1425,11 +1428,13 @@ function renderJobs(jobs) {
         document.getElementById('pagination').innerHTML = '';
         return;
     }
-    grid.innerHTML = paginated.map((j,i) => `
+    grid.innerHTML = paginated.map((j,i) => {
+        const logoUrl = companyLogos[j.company[currentLang]] || companyLogos[j.company.ar];
+        return `
         <article class="job-card" style="animation-delay:${i*0.05}s" role="button" tabindex="0" onclick="openJobModal(${j.id})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openJobModal(${j.id})}" aria-label="${j.title[currentLang]} - ${j.company[currentLang]}">
             <button class="job-card-bookmark ${savedJobs.includes(j.id)?'saved':''}" onclick="event.stopPropagation();toggleSave(${j.id},this)" aria-label="${savedJobs.includes(j.id) ? 'Remove from saved' : 'Save job'}"><svg viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></button>
             <div class="job-card-header">
-                <div class="company-logo ${j.sector}">${j.companyShort[currentLang]}</div>
+                <div class="company-logo ${j.sector}">${logoUrl ? `<img src="${logoUrl}" alt="${j.company[currentLang]}" onerror="this.parentElement.innerHTML='${j.companyShort[currentLang]}'" style="width:100%;height:100%;object-fit:contain;">` : j.companyShort[currentLang]}</div>
                 <div class="job-card-info"><h3 class="job-title">${j.title[currentLang]}</h3><p class="company-name">${j.company[currentLang]}</p></div>
             </div>
             <div class="job-meta">
@@ -1461,7 +1466,7 @@ function renderJobs(jobs) {
                 <button class="apply-btn" onclick="event.stopPropagation();openJobModal(${j.id})">${translations.apply[currentLang]}</button>
             </div>
         </article>
-    `).join('');
+    `}).join('');
     renderPagination(total);
 }
 
@@ -1871,7 +1876,7 @@ function setView(view, btn) {
     document.getElementById('jobsGrid').classList.toggle('list-view', view==='list');
 }
 
-function toggleFilters() { document.getElementById('filtersSidebar').classList.toggle('open'); }
+function toggleFilters() { document.getElementById('filtersSidebar').classList.toggle('open'); document.getElementById('filterBackdrop').classList.toggle('open'); document.body.style.overflow = document.getElementById('filtersSidebar').classList.contains('open') ? 'hidden' : ''; }
 
 function toggleMobileMenu() {
     const nav = document.querySelector('.nav');
