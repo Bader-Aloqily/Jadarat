@@ -1,0 +1,2757 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جدارات - المنصة الوطنية الموحدة للتوظيف</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-900: #134e4a;
+            --primary-800: #115e59;
+            --primary-700: #0f766e;
+            --primary-600: #0d9488;
+            --primary-500: #14b8a6;
+            --primary-400: #2dd4bf;
+            --primary-300: #5eead4;
+            --accent-600: #b45309;
+            --accent-500: #d97706;
+            --accent-400: #f59e0b;
+            --accent-300: #fbbf24;
+            --neutral-950: #0a0a0a;
+            --neutral-900: #171717;
+            --neutral-800: #262626;
+            --neutral-700: #404040;
+            --neutral-600: #525252;
+            --neutral-500: #737373;
+            --neutral-400: #a3a3a3;
+            --neutral-300: #d4d4d4;
+            --neutral-200: #e5e5e5;
+            --neutral-100: #f5f5f5;
+            --neutral-50: #fafafa;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans Arabic', 'Tajawal', sans-serif;
+            background: var(--neutral-50);
+            color: var(--neutral-900);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .pattern-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30L30 0z' fill='none' stroke='%230d9488' stroke-width='1'/%3E%3C/svg%3E");
+            background-size: 60px 60px;
+        }
+
+        .header {
+            background: white;
+            border-bottom: 1px solid var(--neutral-200);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--primary-700);
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-md);
+        }
+
+        .logo-icon svg {
+            width: 26px;
+            height: 26px;
+            fill: white;
+        }
+
+        .logo-text {
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-link {
+            padding: 10px 18px;
+            text-decoration: none;
+            color: var(--neutral-600);
+            font-weight: 500;
+            font-size: 0.95rem;
+            border-radius: var(--radius-md);
+            transition: all 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-700);
+            background: rgba(20, 184, 166, 0.08);
+        }
+
+        .nav-link.active {
+            color: var(--primary-700);
+            background: rgba(20, 184, 166, 0.12);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            background: var(--neutral-100);
+            border-radius: var(--radius-md);
+            padding: 4px;
+            gap: 2px;
+        }
+
+        .lang-btn {
+            padding: 6px 12px;
+            border: none;
+            background: transparent;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--neutral-500);
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .lang-btn.active {
+            background: white;
+            color: var(--primary-700);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            font-family: inherit;
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--neutral-700);
+        }
+
+        .btn-ghost:hover {
+            background: var(--neutral-100);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg), 0 0 0 4px rgba(13, 148, 136, 0.15);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-800) 0%, var(--primary-700) 50%, var(--primary-600) 100%);
+            padding: 48px 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0L100 50L50 100L0 50L50 0z' fill='none' stroke='white' stroke-width='0.5' opacity='0.1'/%3E%3C/svg%3E");
+            background-size: 100px 100px;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-family: 'Tajawal', sans-serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .hero-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            margin-bottom: 32px;
+            font-size: 1.1rem;
+        }
+
+        .search-box {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 8px;
+            display: flex;
+            gap: 8px;
+            box-shadow: var(--shadow-xl);
+            flex-wrap: wrap;
+        }
+
+        .search-field {
+            flex: 1;
+            min-width: 200px;
+            position: relative;
+        }
+
+        .search-field input,
+        .search-field select {
+            width: 100%;
+            padding: 16px 20px;
+            padding-right: 48px;
+            border: 2px solid transparent;
+            border-radius: var(--radius-lg);
+            font-size: 1rem;
+            font-family: inherit;
+            background: var(--neutral-50);
+            transition: all 0.2s ease;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .search-field input:focus,
+        .search-field select:focus {
+            outline: none;
+            border-color: var(--primary-400);
+            background: white;
+        }
+
+        .search-field-icon {
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--neutral-400);
+            pointer-events: none;
+        }
+
+        .search-btn {
+            padding: 16px 40px;
+            background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
+            color: white;
+            border: none;
+            border-radius: var(--radius-lg);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .search-btn:hover {
+            background: linear-gradient(135deg, var(--primary-700), var(--primary-800));
+            transform: translateY(-1px);
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-top: 32px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            color: white;
+        }
+
+        .stat-value {
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .main-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 32px 24px;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 32px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .filters-sidebar {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 24px;
+            height: fit-content;
+            position: sticky;
+            top: 104px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--neutral-100);
+        }
+
+        .filters-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--neutral-200);
+        }
+
+        .filters-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .clear-filters {
+            color: var(--primary-600);
+            font-size: 0.85rem;
+            cursor: pointer;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            background: none;
+            border: none;
+            font-family: inherit;
+        }
+
+        .clear-filters:hover {
+            color: var(--primary-700);
+        }
+
+        .filter-group {
+            margin-bottom: 24px;
+        }
+
+        .filter-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .filter-label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--neutral-700);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .filter-options {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            padding: 10px 12px;
+            border-radius: var(--radius-sm);
+            transition: background 0.2s ease;
+            user-select: none;
+        }
+
+        .filter-option:hover {
+            background: var(--neutral-50);
+        }
+
+        .filter-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--neutral-300);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .filter-option.selected .filter-checkbox {
+            background: var(--primary-600);
+            border-color: var(--primary-600);
+        }
+
+        .filter-checkbox svg {
+            width: 12px;
+            height: 12px;
+            fill: white;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.2s ease;
+        }
+
+        .filter-option.selected .filter-checkbox svg {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .filter-text {
+            font-size: 0.9rem;
+            color: var(--neutral-700);
+            flex: 1;
+        }
+
+        .filter-count {
+            font-size: 0.8rem;
+            color: var(--neutral-400);
+            background: var(--neutral-100);
+            padding: 2px 10px;
+            border-radius: 10px;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .salary-slider {
+            padding: 12px 0;
+        }
+
+        .salary-inputs {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .salary-input-group {
+            flex: 1;
+        }
+
+        .salary-input-label {
+            font-size: 0.75rem;
+            color: var(--neutral-500);
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .salary-input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--neutral-200);
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-family: inherit;
+            text-align: center;
+        }
+
+        .salary-input:focus {
+            outline: none;
+            border-color: var(--primary-400);
+        }
+
+        .range-slider {
+            position: relative;
+            height: 6px;
+            background: var(--neutral-200);
+            border-radius: 3px;
+            margin: 20px 0;
+        }
+
+        .range-slider-fill {
+            position: absolute;
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-500), var(--primary-600));
+            border-radius: 3px;
+        }
+
+        .range-slider input[type="range"] {
+            position: absolute;
+            width: 100%;
+            height: 6px;
+            background: transparent;
+            pointer-events: none;
+            -webkit-appearance: none;
+            appearance: none;
+            top: 0;
+        }
+
+        .range-slider input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 22px;
+            height: 22px;
+            background: white;
+            border: 3px solid var(--primary-600);
+            border-radius: 50%;
+            cursor: pointer;
+            pointer-events: auto;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.2s ease;
+        }
+
+        .range-slider input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+        }
+
+        .filter-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .filter-tag {
+            padding: 8px 16px;
+            background: var(--neutral-100);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--neutral-600);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+            user-select: none;
+        }
+
+        .filter-tag:hover {
+            border-color: var(--primary-300);
+            color: var(--primary-700);
+        }
+
+        .filter-tag.selected {
+            background: rgba(20, 184, 166, 0.12);
+            color: var(--primary-700);
+            border-color: var(--primary-400);
+        }
+
+        .jobs-section {
+            min-width: 0;
+        }
+
+        .jobs-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .jobs-count {
+            font-size: 1rem;
+            color: var(--neutral-600);
+        }
+
+        .jobs-count strong {
+            color: var(--neutral-900);
+            font-weight: 700;
+        }
+
+        .active-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .active-filter-tag {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: rgba(20, 184, 166, 0.1);
+            color: var(--primary-700);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .active-filter-tag button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            color: var(--primary-600);
+        }
+
+        .active-filter-tag button:hover {
+            color: var(--primary-800);
+        }
+
+        .jobs-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .sort-select {
+            padding: 10px 16px;
+            padding-left: 36px;
+            border: 1px solid var(--neutral-200);
+            border-radius: var(--radius-md);
+            font-size: 0.9rem;
+            font-family: inherit;
+            background: white;
+            cursor: pointer;
+            -webkit-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23737373' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: 12px center;
+        }
+
+        .view-toggles {
+            display: flex;
+            background: var(--neutral-100);
+            border-radius: var(--radius-md);
+            padding: 4px;
+        }
+
+        .view-btn {
+            padding: 8px 12px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .view-btn svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--neutral-500);
+        }
+
+        .view-btn.active {
+            background: white;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .view-btn.active svg {
+            stroke: var(--primary-700);
+        }
+
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 20px;
+        }
+
+        .jobs-grid.list-view {
+            grid-template-columns: 1fr;
+        }
+
+        .jobs-grid.list-view .job-card {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .jobs-grid.list-view .job-card-header {
+            margin-bottom: 0;
+        }
+
+        .jobs-grid.list-view .job-meta {
+            margin-bottom: 0;
+        }
+
+        .jobs-grid.list-view .job-tags {
+            margin-bottom: 0;
+        }
+
+        .jobs-grid.list-view .job-card-footer {
+            border-top: none;
+            padding-top: 0;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+        }
+
+        .job-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 24px;
+            border: 1px solid var(--neutral-100);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        .job-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary-500), var(--primary-600));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .job-card:hover {
+            border-color: var(--primary-200);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .job-card:hover::before {
+            opacity: 1;
+        }
+
+        .job-card-header {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .company-logo {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-md);
+            background: var(--neutral-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-weight: 700;
+            color: var(--neutral-500);
+            font-size: 0.75rem;
+            text-align: center;
+            line-height: 1.2;
+            padding: 4px;
+        }
+
+        .company-logo.govt {
+            background: linear-gradient(135deg, rgba(13, 148, 136, 0.1), rgba(13, 148, 136, 0.2));
+            color: var(--primary-700);
+        }
+
+        .company-logo.semi-govt {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0.2));
+            color: #7c3aed;
+        }
+
+        .company-logo.private {
+            background: linear-gradient(135deg, rgba(217, 119, 6, 0.1), rgba(217, 119, 6, 0.2));
+            color: var(--accent-600);
+        }
+
+        .job-card-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .job-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--neutral-900);
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+
+        .company-name {
+            color: var(--neutral-500);
+            font-size: 0.9rem;
+        }
+
+        .job-card-bookmark {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 36px;
+            height: 36px;
+            border: none;
+            background: var(--neutral-50);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .job-card-bookmark svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--neutral-400);
+            fill: none;
+            transition: all 0.2s ease;
+        }
+
+        .job-card-bookmark:hover {
+            background: var(--accent-300);
+        }
+
+        .job-card-bookmark:hover svg {
+            stroke: var(--accent-600);
+        }
+
+        .job-card-bookmark.saved svg {
+            fill: var(--accent-500);
+            stroke: var(--accent-500);
+        }
+
+        .job-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .job-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: var(--neutral-500);
+        }
+
+        .job-meta-item svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--neutral-400);
+        }
+
+        .job-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .job-tag {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .job-tag.type-fulltime { background: rgba(16, 185, 129, 0.1); color: #059669; }
+        .job-tag.type-parttime { background: rgba(139, 92, 246, 0.1); color: #7c3aed; }
+        .job-tag.type-remote { background: rgba(59, 130, 246, 0.1); color: #2563eb; }
+        .job-tag.type-contract { background: rgba(236, 72, 153, 0.1); color: #db2777; }
+        .job-tag.sector-govt { background: rgba(13, 148, 136, 0.1); color: var(--primary-700); }
+        .job-tag.sector-semi-govt { background: rgba(139, 92, 246, 0.1); color: #7c3aed; }
+        .job-tag.sector-private { background: rgba(217, 119, 6, 0.1); color: var(--accent-600); }
+
+        .job-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 16px;
+            border-top: 1px solid var(--neutral-100);
+        }
+
+        .job-salary {
+            font-weight: 700;
+            color: var(--primary-700);
+            font-size: 1rem;
+        }
+
+        .job-salary span {
+            font-weight: 400;
+            color: var(--neutral-400);
+            font-size: 0.85rem;
+        }
+
+        .job-date {
+            font-size: 0.85rem;
+            color: var(--neutral-400);
+        }
+
+        .apply-btn {
+            padding: 10px 24px;
+            background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .apply-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--neutral-500);
+        }
+
+        .no-results svg {
+            width: 80px;
+            height: 80px;
+            stroke: var(--neutral-300);
+            margin-bottom: 20px;
+        }
+
+        .no-results h3 {
+            font-size: 1.25rem;
+            color: var(--neutral-700);
+            margin-bottom: 8px;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-top: 40px;
+        }
+
+        .pagination-btn {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--neutral-200);
+            background: white;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: inherit;
+            font-weight: 500;
+            color: var(--neutral-600);
+            transition: all 0.2s ease;
+        }
+
+        .pagination-btn:hover {
+            border-color: var(--primary-400);
+            color: var(--primary-700);
+        }
+
+        .pagination-btn.active {
+            background: var(--primary-600);
+            border-color: var(--primary-600);
+            color: white;
+        }
+
+        .pagination-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .pagination-btn svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .loading {
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--neutral-200);
+            border-top-color: var(--primary-600);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Mobile */
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            .filters-sidebar {
+                position: static;
+                display: none;
+            }
+            .filters-sidebar.open {
+                display: block;
+            }
+            .nav { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            .header-content { padding: 0 16px; }
+            .hero { padding: 32px 16px; }
+            .hero-title { font-size: 1.75rem; }
+            .search-box { flex-direction: column; }
+            .search-field { min-width: 100%; }
+            .search-btn { width: 100%; justify-content: center; }
+            .main-content { padding: 20px 16px; }
+            .jobs-grid { grid-template-columns: 1fr; }
+            .jobs-header { flex-direction: column; align-items: stretch; }
+            .jobs-controls { justify-content: space-between; }
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            padding: 8px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .mobile-menu-btn svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--neutral-700);
+        }
+
+        @media (max-width: 1024px) {
+            .mobile-menu-btn { display: flex; }
+        }
+
+        .filter-toggle-mobile {
+            display: none;
+            width: 100%;
+            padding: 14px 20px;
+            background: white;
+            border: 1px solid var(--neutral-200);
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            font-family: inherit;
+            color: var(--neutral-700);
+            margin-bottom: 20px;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .filter-toggle-mobile svg {
+            width: 20px;
+            height: 20px;
+            stroke: currentColor;
+        }
+
+        .filter-toggle-mobile .filter-count-badge {
+            background: var(--primary-600);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 1024px) {
+            .filter-toggle-mobile { display: flex; }
+        }
+    </style>
+</head>
+<body>
+    <div class="pattern-bg"></div>
+
+    <header class="header">
+        <div class="header-content">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4zm10 16H4V8h16v12z"/>
+                        <circle cx="12" cy="14" r="3"/>
+                    </svg>
+                </div>
+                <span class="logo-text">جدارات</span>
+            </a>
+
+            <nav class="nav">
+                <a href="#" class="nav-link">الرئيسية</a>
+                <a href="#" class="nav-link active">الوظائف</a>
+                <a href="#" class="nav-link">الشركات</a>
+                <a href="#" class="nav-link">طلباتي</a>
+                <a href="#" class="nav-link">الملف الشخصي</a>
+            </nav>
+
+            <div class="header-actions">
+                <div class="lang-toggle">
+                    <button class="lang-btn active">عربي</button>
+                    <button class="lang-btn">EN</button>
+                </div>
+                <a href="#" class="btn btn-ghost">تسجيل الدخول</a>
+                <a href="#" class="btn btn-primary">إنشاء حساب</a>
+                <button class="mobile-menu-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 12h18M3 6h18M3 18h18"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">اكتشف الفرص الوظيفية المناسبة لك</h1>
+            <p class="hero-subtitle">أكثر من ٣٨,٠٠٠ فرصة عمل في القطاعين الحكومي والخاص</p>
+
+            <div class="search-box">
+                <div class="search-field">
+                    <input type="text" id="searchKeyword" placeholder="المسمى الوظيفي أو الكلمة المفتاحية...">
+                    <span class="search-field-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="M21 21l-4.35-4.35"/>
+                        </svg>
+                    </span>
+                </div>
+                <div class="search-field">
+                    <select id="searchLocation">
+                        <option value="">جميع المناطق</option>
+                        <option value="الرياض">الرياض</option>
+                        <option value="جدة">جدة</option>
+                        <option value="مكة المكرمة">مكة المكرمة</option>
+                        <option value="المدينة المنورة">المدينة المنورة</option>
+                        <option value="الدمام">الدمام</option>
+                        <option value="الظهران">الظهران</option>
+                        <option value="الخبر">الخبر</option>
+                        <option value="الجبيل">الجبيل</option>
+                        <option value="تبوك">تبوك</option>
+                        <option value="أبها">أبها</option>
+                        <option value="حائل">حائل</option>
+                        <option value="نجران">نجران</option>
+                        <option value="جازان">جازان</option>
+                        <option value="القصيم">القصيم</option>
+                    </select>
+                    <span class="search-field-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </span>
+                </div>
+                <button class="search-btn" onclick="applyFilters()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="M21 21l-4.35-4.35"/>
+                    </svg>
+                    بحث
+                </button>
+            </div>
+
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-value" id="totalJobsCount">٣٨,٥٧٧</div>
+                    <div class="stat-label">وظيفة متاحة</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">١٥,٨٠٠+</div>
+                    <div class="stat-label">شركة مسجلة</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">٢,٣٠٠+</div>
+                    <div class="stat-label">تم التوظيف هذا الشهر</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <aside class="filters-sidebar" id="filtersSidebar">
+            <div class="filters-header">
+                <span class="filters-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+                    </svg>
+                    تصفية النتائج
+                </span>
+                <button class="clear-filters" onclick="clearAllFilters()">مسح الكل</button>
+            </div>
+
+            <!-- Job Type Filter -->
+            <div class="filter-group">
+                <label class="filter-label">نوع العمل</label>
+                <div class="filter-options" id="jobTypeFilters">
+                    <!-- Generated by JS -->
+                </div>
+            </div>
+
+            <!-- Sector Filter -->
+            <div class="filter-group">
+                <label class="filter-label">القطاع</label>
+                <div class="filter-options" id="sectorFilters">
+                    <!-- Generated by JS -->
+                </div>
+            </div>
+
+            <!-- Experience Level Filter -->
+            <div class="filter-group">
+                <label class="filter-label">مستوى الخبرة</label>
+                <div class="filter-options" id="experienceFilters">
+                    <!-- Generated by JS -->
+                </div>
+            </div>
+
+            <!-- Salary Range Filter -->
+            <div class="filter-group">
+                <label class="filter-label">نطاق الراتب (شهري)</label>
+                <div class="salary-slider">
+                    <div class="salary-inputs">
+                        <div class="salary-input-group">
+                            <span class="salary-input-label">من</span>
+                            <input type="text" class="salary-input" id="salaryMin" value="٣,٠٠٠" readonly>
+                        </div>
+                        <div class="salary-input-group">
+                            <span class="salary-input-label">إلى</span>
+                            <input type="text" class="salary-input" id="salaryMax" value="٥٠,٠٠٠" readonly>
+                        </div>
+                    </div>
+                    <div class="range-slider">
+                        <div class="range-slider-fill" id="salarySliderFill"></div>
+                        <input type="range" id="salaryMinRange" min="3000" max="50000" value="3000" step="1000">
+                        <input type="range" id="salaryMaxRange" min="3000" max="50000" value="50000" step="1000">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Posted Date Filter -->
+            <div class="filter-group">
+                <label class="filter-label">تاريخ النشر</label>
+                <div class="filter-options" id="dateFilters">
+                    <!-- Generated by JS -->
+                </div>
+            </div>
+
+            <!-- Specialization Tags -->
+            <div class="filter-group">
+                <label class="filter-label">التخصصات</label>
+                <div class="filter-tags" id="specializationFilters">
+                    <!-- Generated by JS -->
+                </div>
+            </div>
+        </aside>
+
+        <section class="jobs-section">
+            <button class="filter-toggle-mobile" onclick="toggleFilters()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+                </svg>
+                تصفية النتائج
+                <span class="filter-count-badge" id="activeFilterCount" style="display: none;">0</span>
+            </button>
+
+            <div class="jobs-header">
+                <p class="jobs-count">عرض <strong id="filteredJobsCount">0</strong> وظيفة</p>
+                <div class="jobs-controls">
+                    <select class="sort-select" id="sortSelect" onchange="applyFilters()">
+                        <option value="newest">الأحدث</option>
+                        <option value="salary-high">الأعلى راتباً</option>
+                        <option value="salary-low">الأقل راتباً</option>
+                    </select>
+                    <div class="view-toggles">
+                        <button class="view-btn active" onclick="setView('grid', this)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="7" height="7"/>
+                                <rect x="14" y="3" width="7" height="7"/>
+                                <rect x="3" y="14" width="7" height="7"/>
+                                <rect x="14" y="14" width="7" height="7"/>
+                            </svg>
+                        </button>
+                        <button class="view-btn" onclick="setView('list', this)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="3" y1="6" x2="21" y2="6"/>
+                                <line x1="3" y1="12" x2="21" y2="12"/>
+                                <line x1="3" y1="18" x2="21" y2="18"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="activeFiltersContainer" class="active-filters"></div>
+
+            <div class="jobs-grid" id="jobsGrid">
+                <!-- Jobs will be rendered here -->
+            </div>
+
+            <div id="pagination" class="pagination"></div>
+        </section>
+    </main>
+
+    <script>
+        // Real job data based on Jadarat listings
+        const jobsData = [
+            // Government Sector Jobs
+            {
+                id: 1,
+                title: "أخصائي موارد بشرية",
+                company: "وزارة الموارد البشرية والتنمية الاجتماعية",
+                companyShort: "الموارد البشرية",
+                location: "الرياض",
+                salaryMin: 12000,
+                salaryMax: 18000,
+                jobType: "fulltime",
+                sector: "govt",
+                experience: "mid",
+                specialization: "hr",
+                postedDays: 1,
+                description: "إدارة شؤون الموظفين وتطوير السياسات"
+            },
+            {
+                id: 2,
+                title: "مهندس برمجيات",
+                company: "وزارة الاتصالات وتقنية المعلومات",
+                companyShort: "الاتصالات",
+                location: "الرياض",
+                salaryMin: 18000,
+                salaryMax: 28000,
+                jobType: "fulltime",
+                sector: "govt",
+                experience: "mid",
+                specialization: "it",
+                postedDays: 2,
+                description: "تطوير الأنظمة الحكومية الرقمية"
+            },
+            {
+                id: 3,
+                title: "طبيب أسنان",
+                company: "وزارة الصحة",
+                companyShort: "الصحة",
+                location: "جدة",
+                salaryMin: 20000,
+                salaryMax: 30000,
+                jobType: "fulltime",
+                sector: "govt",
+                experience: "entry",
+                specialization: "medical",
+                postedDays: 3,
+                description: "تقديم خدمات طب الأسنان في المستشفيات الحكومية"
+            },
+            {
+                id: 4,
+                title: "معلم رياضيات",
+                company: "وزارة التعليم",
+                companyShort: "التعليم",
+                location: "مكة المكرمة",
+                salaryMin: 10000,
+                salaryMax: 14000,
+                jobType: "fulltime",
+                sector: "govt",
+                experience: "fresh",
+                specialization: "education",
+                postedDays: 5,
+                description: "تدريس مادة الرياضيات للمرحلة الثانوية"
+            },
+            {
+                id: 5,
+                title: "مهندس مدني",
+                company: "وزارة الشؤون البلدية والقروية",
+                companyShort: "البلدية",
+                location: "الدمام",
+                salaryMin: 15000,
+                salaryMax: 22000,
+                jobType: "fulltime",
+                sector: "govt",
+                experience: "mid",
+                specialization: "engineering",
+                postedDays: 4,
+                description: "الإشراف على مشاريع البنية التحتية"
+            },
+            {
+                id: 6,
+                title: "أخصائي إعلام",
+                company: "وزارة الإعلام",
+                companyShort: "الإعلام",
+                location: "الرياض",
+                salaryMin: 11000,
+                salaryMax: 16000,
+                jobType: "fulltime",
+                sector: "govt",
+                experience: "entry",
+                specialization: "marketing",
+                postedDays: 2,
+                description: "إعداد المحتوى الإعلامي الرسمي"
+            },
+            {
+                id: 7,
+                title: "مدير برامج سياحية",
+                company: "وزارة السياحة",
+                companyShort: "السياحة",
+                location: "جدة",
+                salaryMin: 18000,
+                salaryMax: 25000,
+                jobType: "fulltime",
+                sector: "govt",
+                experience: "senior",
+                specialization: "marketing",
+                postedDays: 1,
+                description: "تطوير وإدارة البرامج السياحية الوطنية"
+            },
+            {
+                id: 8,
+                title: "أخصائي رياضي",
+                company: "وزارة الرياضة",
+                companyShort: "الرياضة",
+                location: "الرياض",
+                salaryMin: 12000,
+                salaryMax: 18000,
+                jobType: "fulltime",
+                sector: "govt",
+                experience: "entry",
+                specialization: "other",
+                postedDays: 3,
+                description: "الإشراف على الأنشطة الرياضية"
+            },
+
+            // Semi-Government Sector Jobs
+            {
+                id: 9,
+                title: "محلل بيانات",
+                company: "صندوق تنمية الموارد البشرية (هدف)",
+                companyShort: "هدف",
+                location: "الرياض",
+                salaryMin: 16000,
+                salaryMax: 24000,
+                jobType: "fulltime",
+                sector: "semi-govt",
+                experience: "mid",
+                specialization: "it",
+                postedDays: 2,
+                description: "تحليل بيانات سوق العمل السعودي"
+            },
+            {
+                id: 10,
+                title: "طبيب عيون",
+                company: "مستشفى الملك خالد التخصصي للعيون",
+                companyShort: "الملك خالد للعيون",
+                location: "الرياض",
+                salaryMin: 35000,
+                salaryMax: 50000,
+                jobType: "fulltime",
+                sector: "semi-govt",
+                experience: "senior",
+                specialization: "medical",
+                postedDays: 7,
+                description: "تشخيص وعلاج أمراض العيون"
+            },
+            {
+                id: 11,
+                title: "ممرض/ة",
+                company: "الشؤون الصحية بالحرس الوطني",
+                companyShort: "صحة الحرس",
+                location: "الرياض",
+                salaryMin: 10000,
+                salaryMax: 15000,
+                jobType: "fulltime",
+                sector: "semi-govt",
+                experience: "fresh",
+                specialization: "medical",
+                postedDays: 1,
+                description: "تقديم الرعاية التمريضية للمرضى"
+            },
+            {
+                id: 12,
+                title: "أخصائي أمن سيبراني",
+                company: "الهيئة الوطنية للأمن السيبراني",
+                companyShort: "الأمن السيبراني",
+                location: "الرياض",
+                salaryMin: 22000,
+                salaryMax: 35000,
+                jobType: "fulltime",
+                sector: "semi-govt",
+                experience: "mid",
+                specialization: "it",
+                postedDays: 4,
+                description: "حماية البنية التحتية الرقمية الوطنية"
+            },
+
+            // Private Sector Jobs
+            {
+                id: 13,
+                title: "مهندس بترول",
+                company: "أرامكو السعودية",
+                companyShort: "أرامكو",
+                location: "الظهران",
+                salaryMin: 25000,
+                salaryMax: 40000,
+                jobType: "fulltime",
+                sector: "private",
+                experience: "mid",
+                specialization: "engineering",
+                postedDays: 3,
+                description: "تطوير وإدارة عمليات استخراج النفط"
+            },
+            {
+                id: 14,
+                title: "محلل مالي",
+                company: "مصرف الراجحي",
+                companyShort: "الراجحي",
+                location: "الرياض",
+                salaryMin: 18000,
+                salaryMax: 28000,
+                jobType: "fulltime",
+                sector: "private",
+                experience: "mid",
+                specialization: "accounting",
+                postedDays: 2,
+                description: "تحليل البيانات المالية وإعداد التقارير"
+            },
+            {
+                id: 15,
+                title: "مدير تسويق رقمي",
+                company: "شركة الاتصالات السعودية (STC)",
+                companyShort: "STC",
+                location: "الرياض",
+                salaryMin: 22000,
+                salaryMax: 32000,
+                jobType: "fulltime",
+                sector: "private",
+                experience: "senior",
+                specialization: "marketing",
+                postedDays: 1,
+                description: "قيادة استراتيجية التسويق الرقمي"
+            },
+            {
+                id: 16,
+                title: "مهندس كيميائي",
+                company: "سابك",
+                companyShort: "سابك",
+                location: "الجبيل",
+                salaryMin: 18000,
+                salaryMax: 26000,
+                jobType: "fulltime",
+                sector: "private",
+                experience: "entry",
+                specialization: "engineering",
+                postedDays: 5,
+                description: "تشغيل ومراقبة العمليات الكيميائية"
+            },
+            {
+                id: 17,
+                title: "مصمم تجربة المستخدم",
+                company: "نيوم",
+                companyShort: "نيوم",
+                location: "تبوك",
+                salaryMin: 20000,
+                salaryMax: 30000,
+                jobType: "fulltime",
+                sector: "private",
+                experience: "mid",
+                specialization: "it",
+                postedDays: 2,
+                description: "تصميم واجهات المستخدم للتطبيقات الذكية"
+            },
+            {
+                id: 18,
+                title: "مطور تطبيقات موبايل",
+                company: "شركة علم",
+                companyShort: "علم",
+                location: "الرياض",
+                salaryMin: 16000,
+                salaryMax: 24000,
+                jobType: "fulltime",
+                sector: "private",
+                experience: "entry",
+                specialization: "it",
+                postedDays: 4,
+                description: "تطوير تطبيقات iOS و Android"
+            },
+            {
+                id: 19,
+                title: "مدير مشاريع",
+                company: "مجموعة بن لادن السعودية",
+                companyShort: "بن لادن",
+                location: "جدة",
+                salaryMin: 25000,
+                salaryMax: 38000,
+                jobType: "fulltime",
+                sector: "private",
+                experience: "senior",
+                specialization: "engineering",
+                postedDays: 6,
+                description: "إدارة مشاريع البناء والتشييد الكبرى"
+            },
+            {
+                id: 20,
+                title: "محاسب قانوني",
+                company: "البنك الأهلي السعودي",
+                companyShort: "الأهلي",
+                location: "الرياض",
+                salaryMin: 15000,
+                salaryMax: 22000,
+                jobType: "fulltime",
+                sector: "private",
+                experience: "mid",
+                specialization: "accounting",
+                postedDays: 3,
+                description: "إعداد القوائم المالية والتقارير الضريبية"
+            },
+            {
+                id: 21,
+                title: "صيدلي",
+                company: "صيدليات النهدي",
+                companyShort: "النهدي",
+                location: "جدة",
+                salaryMin: 12000,
+                salaryMax: 16000,
+                jobType: "fulltime",
+                sector: "private",
+                experience: "fresh",
+                specialization: "medical",
+                postedDays: 1,
+                description: "صرف الأدوية وتقديم الاستشارات الدوائية"
+            },
+            {
+                id: 22,
+                title: "مهندس شبكات",
+                company: "موبايلي",
+                companyShort: "موبايلي",
+                location: "الرياض",
+                salaryMin: 16000,
+                salaryMax: 24000,
+                jobType: "fulltime",
+                sector: "private",
+                experience: "mid",
+                specialization: "it",
+                postedDays: 5,
+                description: "تصميم وصيانة شبكات الاتصالات"
+            },
+            {
+                id: 23,
+                title: "مستشار قانوني",
+                company: "شركة الفوزان القابضة",
+                companyShort: "الفوزان",
+                location: "الرياض",
+                salaryMin: 20000,
+                salaryMax: 30000,
+                jobType: "fulltime",
+                sector: "private",
+                experience: "senior",
+                specialization: "legal",
+                postedDays: 7,
+                description: "تقديم الاستشارات القانونية للشركة"
+            },
+            {
+                id: 24,
+                title: "أخصائي مبيعات",
+                company: "شركة جرير للتسويق",
+                companyShort: "جرير",
+                location: "الدمام",
+                salaryMin: 8000,
+                salaryMax: 12000,
+                jobType: "fulltime",
+                sector: "private",
+                experience: "fresh",
+                specialization: "marketing",
+                postedDays: 2,
+                description: "بيع المنتجات الإلكترونية والمكتبية"
+            },
+            {
+                id: 25,
+                title: "مدير موارد بشرية",
+                company: "شركة المراعي",
+                companyShort: "المراعي",
+                location: "الرياض",
+                salaryMin: 25000,
+                salaryMax: 35000,
+                jobType: "fulltime",
+                sector: "private",
+                experience: "senior",
+                specialization: "hr",
+                postedDays: 4,
+                description: "إدارة شؤون الموظفين والتطوير التنظيمي"
+            },
+            {
+                id: 26,
+                title: "فني صيانة",
+                company: "الشركة السعودية للكهرباء",
+                companyShort: "الكهرباء",
+                location: "حائل",
+                salaryMin: 7000,
+                salaryMax: 10000,
+                jobType: "fulltime",
+                sector: "private",
+                experience: "fresh",
+                specialization: "engineering",
+                postedDays: 3,
+                description: "صيانة معدات الكهرباء"
+            },
+            {
+                id: 27,
+                title: "مدير عمليات",
+                company: "شركة أكوا باور",
+                companyShort: "أكوا باور",
+                location: "الرياض",
+                salaryMin: 30000,
+                salaryMax: 45000,
+                jobType: "fulltime",
+                sector: "private",
+                experience: "senior",
+                specialization: "engineering",
+                postedDays: 6,
+                description: "إدارة عمليات محطات الطاقة"
+            },
+            {
+                id: 28,
+                title: "مطور ويب",
+                company: "شركة حلول",
+                companyShort: "حلول",
+                location: "الرياض",
+                salaryMin: 14000,
+                salaryMax: 20000,
+                jobType: "remote",
+                sector: "private",
+                experience: "entry",
+                specialization: "it",
+                postedDays: 1,
+                description: "تطوير مواقع وتطبيقات الويب"
+            },
+            {
+                id: 29,
+                title: "محلل أعمال",
+                company: "شركة ثقة",
+                companyShort: "ثقة",
+                location: "الرياض",
+                salaryMin: 15000,
+                salaryMax: 22000,
+                jobType: "fulltime",
+                sector: "private",
+                experience: "mid",
+                specialization: "it",
+                postedDays: 5,
+                description: "تحليل متطلبات العمل وتحسين العمليات"
+            },
+            {
+                id: 30,
+                title: "مهندس ذكاء اصطناعي",
+                company: "سدايا",
+                companyShort: "سدايا",
+                location: "الرياض",
+                salaryMin: 25000,
+                salaryMax: 40000,
+                jobType: "fulltime",
+                sector: "semi-govt",
+                experience: "mid",
+                specialization: "it",
+                postedDays: 2,
+                description: "تطوير حلول الذكاء الاصطناعي"
+            },
+            {
+                id: 31,
+                title: "محاسب",
+                company: "شركة بترورابغ",
+                companyShort: "بترورابغ",
+                location: "رابغ",
+                salaryMin: 12000,
+                salaryMax: 18000,
+                jobType: "fulltime",
+                sector: "private",
+                experience: "entry",
+                specialization: "accounting",
+                postedDays: 4,
+                description: "إدارة الحسابات المالية"
+            },
+            {
+                id: 32,
+                title: "أخصائي تدريب",
+                company: "معهد الإدارة العامة",
+                companyShort: "الإدارة العامة",
+                location: "الرياض",
+                salaryMin: 14000,
+                salaryMax: 20000,
+                jobType: "fulltime",
+                sector: "govt",
+                experience: "mid",
+                specialization: "hr",
+                postedDays: 3,
+                description: "تصميم وتنفيذ البرامج التدريبية"
+            },
+            {
+                id: 33,
+                title: "مساعد إداري",
+                company: "وزارة الحج والعمرة",
+                companyShort: "الحج والعمرة",
+                location: "مكة المكرمة",
+                salaryMin: 7000,
+                salaryMax: 10000,
+                jobType: "fulltime",
+                sector: "govt",
+                experience: "fresh",
+                specialization: "other",
+                postedDays: 1,
+                description: "دعم العمليات الإدارية"
+            },
+            {
+                id: 34,
+                title: "مهندس معماري",
+                company: "شركة دار الأركان",
+                companyShort: "دار الأركان",
+                location: "الرياض",
+                salaryMin: 18000,
+                salaryMax: 28000,
+                jobType: "fulltime",
+                sector: "private",
+                experience: "mid",
+                specialization: "engineering",
+                postedDays: 6,
+                description: "تصميم المشاريع العقارية"
+            },
+            {
+                id: 35,
+                title: "طبيب باطنية",
+                company: "مستشفى الملك فيصل التخصصي",
+                companyShort: "فيصل التخصصي",
+                location: "الرياض",
+                salaryMin: 40000,
+                salaryMax: 60000,
+                jobType: "fulltime",
+                sector: "semi-govt",
+                experience: "senior",
+                specialization: "medical",
+                postedDays: 7,
+                description: "تشخيص وعلاج الأمراض الباطنية"
+            },
+            {
+                id: 36,
+                title: "أخصائي تسويق",
+                company: "هنقرستيشن",
+                companyShort: "هنقرستيشن",
+                location: "الرياض",
+                salaryMin: 12000,
+                salaryMax: 18000,
+                jobType: "fulltime",
+                sector: "private",
+                experience: "entry",
+                specialization: "marketing",
+                postedDays: 2,
+                description: "تنفيذ حملات التسويق الرقمي"
+            },
+            {
+                id: 37,
+                title: "مدقق داخلي",
+                company: "هيئة السوق المالية",
+                companyShort: "السوق المالية",
+                location: "الرياض",
+                salaryMin: 18000,
+                salaryMax: 26000,
+                jobType: "fulltime",
+                sector: "semi-govt",
+                experience: "mid",
+                specialization: "accounting",
+                postedDays: 5,
+                description: "مراجعة وتدقيق العمليات المالية"
+            },
+            {
+                id: 38,
+                title: "مهندس اتصالات",
+                company: "زين السعودية",
+                companyShort: "زين",
+                location: "الرياض",
+                salaryMin: 15000,
+                salaryMax: 22000,
+                jobType: "fulltime",
+                sector: "private",
+                experience: "entry",
+                specialization: "engineering",
+                postedDays: 3,
+                description: "تصميم وتحسين شبكات الاتصالات"
+            },
+            {
+                id: 39,
+                title: "مدير فرع",
+                company: "بنك الرياض",
+                companyShort: "بنك الرياض",
+                location: "جدة",
+                salaryMin: 22000,
+                salaryMax: 32000,
+                jobType: "fulltime",
+                sector: "private",
+                experience: "senior",
+                specialization: "accounting",
+                postedDays: 4,
+                description: "إدارة عمليات الفرع البنكي"
+            },
+            {
+                id: 40,
+                title: "مصمم جرافيك",
+                company: "مجموعة MBC",
+                companyShort: "MBC",
+                location: "الرياض",
+                salaryMin: 12000,
+                salaryMax: 18000,
+                jobType: "fulltime",
+                sector: "private",
+                experience: "entry",
+                specialization: "marketing",
+                postedDays: 1,
+                description: "تصميم المحتوى البصري والإعلاني"
+            },
+            // Part-time and Remote Jobs
+            {
+                id: 41,
+                title: "مترجم",
+                company: "مركز الملك عبدالعزيز للحوار الوطني",
+                companyShort: "الحوار الوطني",
+                location: "الرياض",
+                salaryMin: 8000,
+                salaryMax: 12000,
+                jobType: "parttime",
+                sector: "semi-govt",
+                experience: "mid",
+                specialization: "other",
+                postedDays: 2,
+                description: "ترجمة الوثائق والمحتوى"
+            },
+            {
+                id: 42,
+                title: "كاتب محتوى",
+                company: "شركة نون",
+                companyShort: "نون",
+                location: "الرياض",
+                salaryMin: 10000,
+                salaryMax: 15000,
+                jobType: "remote",
+                sector: "private",
+                experience: "entry",
+                specialization: "marketing",
+                postedDays: 1,
+                description: "كتابة المحتوى التسويقي"
+            },
+            {
+                id: 43,
+                title: "مستشار ضريبي",
+                company: "برايس ووترهاوس كوبرز",
+                companyShort: "PwC",
+                location: "الرياض",
+                salaryMin: 25000,
+                salaryMax: 40000,
+                jobType: "fulltime",
+                sector: "private",
+                experience: "senior",
+                specialization: "accounting",
+                postedDays: 5,
+                description: "تقديم الاستشارات الضريبية"
+            },
+            {
+                id: 44,
+                title: "مدخل بيانات",
+                company: "شركة طيران ناس",
+                companyShort: "طيران ناس",
+                location: "الرياض",
+                salaryMin: 5000,
+                salaryMax: 7000,
+                jobType: "parttime",
+                sector: "private",
+                experience: "fresh",
+                specialization: "other",
+                postedDays: 3,
+                description: "إدخال ومعالجة البيانات"
+            },
+            {
+                id: 45,
+                title: "مهندس DevOps",
+                company: "شركة إلم",
+                companyShort: "إلم",
+                location: "الرياض",
+                salaryMin: 20000,
+                salaryMax: 30000,
+                jobType: "remote",
+                sector: "private",
+                experience: "mid",
+                specialization: "it",
+                postedDays: 2,
+                description: "إدارة البنية التحتية السحابية"
+            },
+            // Contract Jobs
+            {
+                id: 46,
+                title: "استشاري تطوير أعمال",
+                company: "ديلويت",
+                companyShort: "ديلويت",
+                location: "الرياض",
+                salaryMin: 30000,
+                salaryMax: 45000,
+                jobType: "contract",
+                sector: "private",
+                experience: "senior",
+                specialization: "other",
+                postedDays: 4,
+                description: "تقديم استشارات تطوير الأعمال"
+            },
+            {
+                id: 47,
+                title: "مدير مشروع تقني",
+                company: "أكسنتشر",
+                companyShort: "أكسنتشر",
+                location: "الرياض",
+                salaryMin: 28000,
+                salaryMax: 40000,
+                jobType: "contract",
+                sector: "private",
+                experience: "senior",
+                specialization: "it",
+                postedDays: 6,
+                description: "إدارة مشاريع التحول الرقمي"
+            },
+            {
+                id: 48,
+                title: "معلمة رياض أطفال",
+                company: "مدارس المملكة",
+                companyShort: "مدارس المملكة",
+                location: "جدة",
+                salaryMin: 7000,
+                salaryMax: 10000,
+                jobType: "fulltime",
+                sector: "private",
+                experience: "fresh",
+                specialization: "education",
+                postedDays: 2,
+                description: "تعليم ورعاية الأطفال"
+            },
+            {
+                id: 49,
+                title: "مهندس كهرباء",
+                company: "شركة أرامكو توتال للتكرير",
+                companyShort: "ساتورب",
+                location: "الجبيل",
+                salaryMin: 20000,
+                salaryMax: 30000,
+                jobType: "fulltime",
+                sector: "private",
+                experience: "mid",
+                specialization: "engineering",
+                postedDays: 5,
+                description: "صيانة وتشغيل الأنظمة الكهربائية"
+            },
+            {
+                id: 50,
+                title: "أخصائي علاقات عامة",
+                company: "الهيئة العامة للترفيه",
+                companyShort: "الترفيه",
+                location: "الرياض",
+                salaryMin: 14000,
+                salaryMax: 20000,
+                jobType: "fulltime",
+                sector: "semi-govt",
+                experience: "mid",
+                specialization: "marketing",
+                postedDays: 1,
+                description: "إدارة العلاقات العامة والإعلام"
+            }
+        ];
+
+        // Filter options configuration
+        const filterConfig = {
+            jobTypes: [
+                { id: 'fulltime', label: 'دوام كامل', count: 42 },
+                { id: 'parttime', label: 'دوام جزئي', count: 3 },
+                { id: 'remote', label: 'عن بُعد', count: 4 },
+                { id: 'contract', label: 'عقد مؤقت', count: 2 }
+            ],
+            sectors: [
+                { id: 'govt', label: 'حكومي', count: 10 },
+                { id: 'semi-govt', label: 'شبه حكومي', count: 8 },
+                { id: 'private', label: 'خاص', count: 32 }
+            ],
+            experience: [
+                { id: 'fresh', label: 'حديث التخرج', count: 10 },
+                { id: 'entry', label: 'مبتدئ (١-٣ سنوات)', count: 12 },
+                { id: 'mid', label: 'متوسط (٤-٧ سنوات)', count: 18 },
+                { id: 'senior', label: 'خبير (+٨ سنوات)', count: 10 }
+            ],
+            postedDate: [
+                { id: 'today', label: 'اليوم', days: 1 },
+                { id: 'week', label: 'هذا الأسبوع', days: 7 },
+                { id: 'month', label: 'هذا الشهر', days: 30 }
+            ],
+            specializations: [
+                { id: 'it', label: 'تقنية المعلومات' },
+                { id: 'engineering', label: 'الهندسة' },
+                { id: 'accounting', label: 'المحاسبة والمالية' },
+                { id: 'marketing', label: 'التسويق والإعلام' },
+                { id: 'medical', label: 'الطب والصحة' },
+                { id: 'hr', label: 'الموارد البشرية' },
+                { id: 'education', label: 'التعليم' },
+                { id: 'legal', label: 'القانون' },
+                { id: 'other', label: 'أخرى' }
+            ]
+        };
+
+        // Active filters state
+        let activeFilters = {
+            keyword: '',
+            location: '',
+            jobTypes: [],
+            sectors: [],
+            experience: [],
+            postedDate: null,
+            specializations: [],
+            salaryMin: 3000,
+            salaryMax: 50000
+        };
+
+        let currentPage = 1;
+        const jobsPerPage = 12;
+        let currentView = 'grid';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderFilters();
+            setupSalarySlider();
+            applyFilters();
+            setupSearchListeners();
+        });
+
+        function renderFilters() {
+            // Job Types
+            const jobTypeContainer = document.getElementById('jobTypeFilters');
+            jobTypeContainer.innerHTML = filterConfig.jobTypes.map(type => `
+                <div class="filter-option" data-filter="jobType" data-value="${type.id}" onclick="toggleFilter(this, 'jobTypes', '${type.id}')">
+                    <span class="filter-checkbox">
+                        <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+                    </span>
+                    <span class="filter-text">${type.label}</span>
+                    <span class="filter-count">${type.count}</span>
+                </div>
+            `).join('');
+
+            // Sectors
+            const sectorContainer = document.getElementById('sectorFilters');
+            sectorContainer.innerHTML = filterConfig.sectors.map(sector => `
+                <div class="filter-option" data-filter="sector" data-value="${sector.id}" onclick="toggleFilter(this, 'sectors', '${sector.id}')">
+                    <span class="filter-checkbox">
+                        <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+                    </span>
+                    <span class="filter-text">${sector.label}</span>
+                    <span class="filter-count">${sector.count}</span>
+                </div>
+            `).join('');
+
+            // Experience
+            const experienceContainer = document.getElementById('experienceFilters');
+            experienceContainer.innerHTML = filterConfig.experience.map(exp => `
+                <div class="filter-option" data-filter="experience" data-value="${exp.id}" onclick="toggleFilter(this, 'experience', '${exp.id}')">
+                    <span class="filter-checkbox">
+                        <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+                    </span>
+                    <span class="filter-text">${exp.label}</span>
+                    <span class="filter-count">${exp.count}</span>
+                </div>
+            `).join('');
+
+            // Posted Date
+            const dateContainer = document.getElementById('dateFilters');
+            dateContainer.innerHTML = filterConfig.postedDate.map(date => `
+                <div class="filter-option" data-filter="postedDate" data-value="${date.id}" onclick="toggleDateFilter(this, '${date.id}')">
+                    <span class="filter-checkbox">
+                        <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+                    </span>
+                    <span class="filter-text">${date.label}</span>
+                </div>
+            `).join('');
+
+            // Specializations
+            const specContainer = document.getElementById('specializationFilters');
+            specContainer.innerHTML = filterConfig.specializations.map(spec => `
+                <span class="filter-tag" data-filter="specialization" data-value="${spec.id}" onclick="toggleSpecialization(this, '${spec.id}')">${spec.label}</span>
+            `).join('');
+        }
+
+        function setupSalarySlider() {
+            const minSlider = document.getElementById('salaryMinRange');
+            const maxSlider = document.getElementById('salaryMaxRange');
+            const minInput = document.getElementById('salaryMin');
+            const maxInput = document.getElementById('salaryMax');
+            const fill = document.getElementById('salarySliderFill');
+
+            function updateSlider() {
+                const min = parseInt(minSlider.value);
+                const max = parseInt(maxSlider.value);
+
+                if (min > max - 2000) {
+                    minSlider.value = max - 2000;
+                }
+
+                const minPercent = ((minSlider.value - 3000) / 47000) * 100;
+                const maxPercent = ((maxSlider.value - 3000) / 47000) * 100;
+
+                fill.style.right = minPercent + '%';
+                fill.style.width = (maxPercent - minPercent) + '%';
+
+                minInput.value = formatSalary(minSlider.value);
+                maxInput.value = formatSalary(maxSlider.value);
+
+                activeFilters.salaryMin = parseInt(minSlider.value);
+                activeFilters.salaryMax = parseInt(maxSlider.value);
+            }
+
+            minSlider.addEventListener('input', () => {
+                updateSlider();
+                debounceApplyFilters();
+            });
+
+            maxSlider.addEventListener('input', () => {
+                const min = parseInt(minSlider.value);
+                if (parseInt(maxSlider.value) < min + 2000) {
+                    maxSlider.value = min + 2000;
+                }
+                updateSlider();
+                debounceApplyFilters();
+            });
+
+            updateSlider();
+        }
+
+        function formatSalary(value) {
+            return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",").replace(/[0-9]/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
+        }
+
+        function toArabicNumber(num) {
+            return num.toString().replace(/[0-9]/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
+        }
+
+        let filterTimeout;
+        function debounceApplyFilters() {
+            clearTimeout(filterTimeout);
+            filterTimeout = setTimeout(applyFilters, 300);
+        }
+
+        function setupSearchListeners() {
+            const keywordInput = document.getElementById('searchKeyword');
+            const locationSelect = document.getElementById('searchLocation');
+
+            keywordInput.addEventListener('input', (e) => {
+                activeFilters.keyword = e.target.value;
+                debounceApplyFilters();
+            });
+
+            keywordInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    applyFilters();
+                }
+            });
+
+            locationSelect.addEventListener('change', (e) => {
+                activeFilters.location = e.target.value;
+                applyFilters();
+            });
+        }
+
+        function toggleFilter(element, filterType, value) {
+            element.classList.toggle('selected');
+            const index = activeFilters[filterType].indexOf(value);
+            if (index > -1) {
+                activeFilters[filterType].splice(index, 1);
+            } else {
+                activeFilters[filterType].push(value);
+            }
+            currentPage = 1;
+            applyFilters();
+        }
+
+        function toggleDateFilter(element, value) {
+            const wasSelected = element.classList.contains('selected');
+            document.querySelectorAll('[data-filter="postedDate"]').forEach(el => el.classList.remove('selected'));
+
+            if (!wasSelected) {
+                element.classList.add('selected');
+                activeFilters.postedDate = value;
+            } else {
+                activeFilters.postedDate = null;
+            }
+            currentPage = 1;
+            applyFilters();
+        }
+
+        function toggleSpecialization(element, value) {
+            element.classList.toggle('selected');
+            const index = activeFilters.specializations.indexOf(value);
+            if (index > -1) {
+                activeFilters.specializations.splice(index, 1);
+            } else {
+                activeFilters.specializations.push(value);
+            }
+            currentPage = 1;
+            applyFilters();
+        }
+
+        function clearAllFilters() {
+            activeFilters = {
+                keyword: '',
+                location: '',
+                jobTypes: [],
+                sectors: [],
+                experience: [],
+                postedDate: null,
+                specializations: [],
+                salaryMin: 3000,
+                salaryMax: 50000
+            };
+
+            document.getElementById('searchKeyword').value = '';
+            document.getElementById('searchLocation').value = '';
+            document.querySelectorAll('.filter-option.selected').forEach(el => el.classList.remove('selected'));
+            document.querySelectorAll('.filter-tag.selected').forEach(el => el.classList.remove('selected'));
+
+            document.getElementById('salaryMinRange').value = 3000;
+            document.getElementById('salaryMaxRange').value = 50000;
+            setupSalarySlider();
+
+            currentPage = 1;
+            applyFilters();
+        }
+
+        function applyFilters() {
+            let filteredJobs = [...jobsData];
+
+            // Keyword filter
+            if (activeFilters.keyword) {
+                const keyword = activeFilters.keyword.toLowerCase();
+                filteredJobs = filteredJobs.filter(job =>
+                    job.title.toLowerCase().includes(keyword) ||
+                    job.company.toLowerCase().includes(keyword) ||
+                    job.description.toLowerCase().includes(keyword)
+                );
+            }
+
+            // Location filter
+            if (activeFilters.location) {
+                filteredJobs = filteredJobs.filter(job => job.location === activeFilters.location);
+            }
+
+            // Job type filter
+            if (activeFilters.jobTypes.length > 0) {
+                filteredJobs = filteredJobs.filter(job => activeFilters.jobTypes.includes(job.jobType));
+            }
+
+            // Sector filter
+            if (activeFilters.sectors.length > 0) {
+                filteredJobs = filteredJobs.filter(job => activeFilters.sectors.includes(job.sector));
+            }
+
+            // Experience filter
+            if (activeFilters.experience.length > 0) {
+                filteredJobs = filteredJobs.filter(job => activeFilters.experience.includes(job.experience));
+            }
+
+            // Posted date filter
+            if (activeFilters.postedDate) {
+                const dateConfig = filterConfig.postedDate.find(d => d.id === activeFilters.postedDate);
+                if (dateConfig) {
+                    filteredJobs = filteredJobs.filter(job => job.postedDays <= dateConfig.days);
+                }
+            }
+
+            // Specialization filter
+            if (activeFilters.specializations.length > 0) {
+                filteredJobs = filteredJobs.filter(job => activeFilters.specializations.includes(job.specialization));
+            }
+
+            // Salary filter
+            filteredJobs = filteredJobs.filter(job =>
+                job.salaryMin >= activeFilters.salaryMin && job.salaryMax <= activeFilters.salaryMax
+            );
+
+            // Sort
+            const sortValue = document.getElementById('sortSelect').value;
+            switch (sortValue) {
+                case 'newest':
+                    filteredJobs.sort((a, b) => a.postedDays - b.postedDays);
+                    break;
+                case 'salary-high':
+                    filteredJobs.sort((a, b) => b.salaryMax - a.salaryMax);
+                    break;
+                case 'salary-low':
+                    filteredJobs.sort((a, b) => a.salaryMin - b.salaryMin);
+                    break;
+            }
+
+            renderJobs(filteredJobs);
+            renderActiveFilters();
+            updateFilterCounts();
+        }
+
+        function renderJobs(jobs) {
+            const container = document.getElementById('jobsGrid');
+            const countElement = document.getElementById('filteredJobsCount');
+
+            // Pagination
+            const totalPages = Math.ceil(jobs.length / jobsPerPage);
+            const startIndex = (currentPage - 1) * jobsPerPage;
+            const paginatedJobs = jobs.slice(startIndex, startIndex + jobsPerPage);
+
+            countElement.textContent = toArabicNumber(jobs.length);
+
+            if (paginatedJobs.length === 0) {
+                container.innerHTML = `
+                    <div class="no-results">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="M21 21l-4.35-4.35"/>
+                            <path d="M8 8l6 6M14 8l-6 6"/>
+                        </svg>
+                        <h3>لا توجد نتائج</h3>
+                        <p>جرب تغيير معايير البحث أو إزالة بعض الفلاتر</p>
+                    </div>
+                `;
+                document.getElementById('pagination').innerHTML = '';
+                return;
+            }
+
+            container.innerHTML = paginatedJobs.map((job, index) => `
+                <article class="job-card" style="animation-delay: ${index * 0.05}s">
+                    <button class="job-card-bookmark" onclick="this.classList.toggle('saved')">
+                        <svg viewBox="0 0 24 24" stroke-width="2">
+                            <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/>
+                        </svg>
+                    </button>
+                    <div class="job-card-header">
+                        <div class="company-logo ${job.sector}">${job.companyShort}</div>
+                        <div class="job-card-info">
+                            <h3 class="job-title">${job.title}</h3>
+                            <p class="company-name">${job.company}</p>
+                        </div>
+                    </div>
+                    <div class="job-meta">
+                        <span class="job-meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            ${job.location}
+                        </span>
+                        <span class="job-meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                                <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
+                            </svg>
+                            ${getExperienceLabel(job.experience)}
+                        </span>
+                    </div>
+                    <div class="job-tags">
+                        <span class="job-tag type-${job.jobType}">${getJobTypeLabel(job.jobType)}</span>
+                        <span class="job-tag sector-${job.sector}">${getSectorLabel(job.sector)}</span>
+                    </div>
+                    <div class="job-card-footer">
+                        <div>
+                            <div class="job-salary">${formatSalaryRange(job.salaryMin, job.salaryMax)}</div>
+                            <div class="job-date">${getPostedDateLabel(job.postedDays)}</div>
+                        </div>
+                        <button class="apply-btn">تقديم</button>
+                    </div>
+                </article>
+            `).join('');
+
+            renderPagination(jobs.length, totalPages);
+        }
+
+        function renderPagination(totalJobs, totalPages) {
+            const container = document.getElementById('pagination');
+
+            if (totalPages <= 1) {
+                container.innerHTML = '';
+                return;
+            }
+
+            let html = `
+                <button class="pagination-btn" onclick="changePage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
+            `;
+
+            const maxVisible = 5;
+            let startPage = Math.max(1, currentPage - Math.floor(maxVisible / 2));
+            let endPage = Math.min(totalPages, startPage + maxVisible - 1);
+
+            if (endPage - startPage < maxVisible - 1) {
+                startPage = Math.max(1, endPage - maxVisible + 1);
+            }
+
+            for (let i = startPage; i <= endPage; i++) {
+                html += `
+                    <button class="pagination-btn ${i === currentPage ? 'active' : ''}" onclick="changePage(${i})">
+                        ${toArabicNumber(i)}
+                    </button>
+                `;
+            }
+
+            html += `
+                <button class="pagination-btn" onclick="changePage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+            `;
+
+            container.innerHTML = html;
+        }
+
+        function changePage(page) {
+            currentPage = page;
+            applyFilters();
+            document.querySelector('.jobs-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function renderActiveFilters() {
+            const container = document.getElementById('activeFiltersContainer');
+            const countBadge = document.getElementById('activeFilterCount');
+            let tags = [];
+
+            if (activeFilters.keyword) {
+                tags.push({ label: `"${activeFilters.keyword}"`, type: 'keyword' });
+            }
+
+            if (activeFilters.location) {
+                tags.push({ label: activeFilters.location, type: 'location' });
+            }
+
+            activeFilters.jobTypes.forEach(type => {
+                const config = filterConfig.jobTypes.find(t => t.id === type);
+                if (config) tags.push({ label: config.label, type: 'jobType', value: type });
+            });
+
+            activeFilters.sectors.forEach(sector => {
+                const config = filterConfig.sectors.find(s => s.id === sector);
+                if (config) tags.push({ label: config.label, type: 'sector', value: sector });
+            });
+
+            activeFilters.experience.forEach(exp => {
+                const config = filterConfig.experience.find(e => e.id === exp);
+                if (config) tags.push({ label: config.label, type: 'experience', value: exp });
+            });
+
+            if (activeFilters.postedDate) {
+                const config = filterConfig.postedDate.find(d => d.id === activeFilters.postedDate);
+                if (config) tags.push({ label: config.label, type: 'postedDate' });
+            }
+
+            activeFilters.specializations.forEach(spec => {
+                const config = filterConfig.specializations.find(s => s.id === spec);
+                if (config) tags.push({ label: config.label, type: 'specialization', value: spec });
+            });
+
+            if (activeFilters.salaryMin > 3000 || activeFilters.salaryMax < 50000) {
+                tags.push({
+                    label: `${formatSalary(activeFilters.salaryMin)} - ${formatSalary(activeFilters.salaryMax)} ر.س`,
+                    type: 'salary'
+                });
+            }
+
+            container.innerHTML = tags.map(tag => `
+                <span class="active-filter-tag">
+                    ${tag.label}
+                    <button onclick="removeFilter('${tag.type}', '${tag.value || ''}')">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 6L6 18M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </span>
+            `).join('');
+
+            // Update mobile filter count badge
+            if (tags.length > 0) {
+                countBadge.textContent = toArabicNumber(tags.length);
+                countBadge.style.display = 'inline';
+            } else {
+                countBadge.style.display = 'none';
+            }
+        }
+
+        function removeFilter(type, value) {
+            switch (type) {
+                case 'keyword':
+                    activeFilters.keyword = '';
+                    document.getElementById('searchKeyword').value = '';
+                    break;
+                case 'location':
+                    activeFilters.location = '';
+                    document.getElementById('searchLocation').value = '';
+                    break;
+                case 'jobType':
+                    activeFilters.jobTypes = activeFilters.jobTypes.filter(t => t !== value);
+                    document.querySelector(`[data-filter="jobType"][data-value="${value}"]`)?.classList.remove('selected');
+                    break;
+                case 'sector':
+                    activeFilters.sectors = activeFilters.sectors.filter(s => s !== value);
+                    document.querySelector(`[data-filter="sector"][data-value="${value}"]`)?.classList.remove('selected');
+                    break;
+                case 'experience':
+                    activeFilters.experience = activeFilters.experience.filter(e => e !== value);
+                    document.querySelector(`[data-filter="experience"][data-value="${value}"]`)?.classList.remove('selected');
+                    break;
+                case 'postedDate':
+                    activeFilters.postedDate = null;
+                    document.querySelectorAll('[data-filter="postedDate"]').forEach(el => el.classList.remove('selected'));
+                    break;
+                case 'specialization':
+                    activeFilters.specializations = activeFilters.specializations.filter(s => s !== value);
+                    document.querySelector(`[data-filter="specialization"][data-value="${value}"]`)?.classList.remove('selected');
+                    break;
+                case 'salary':
+                    activeFilters.salaryMin = 3000;
+                    activeFilters.salaryMax = 50000;
+                    document.getElementById('salaryMinRange').value = 3000;
+                    document.getElementById('salaryMaxRange').value = 50000;
+                    setupSalarySlider();
+                    break;
+            }
+            currentPage = 1;
+            applyFilters();
+        }
+
+        function updateFilterCounts() {
+            // This would ideally update counts based on filtered results
+            // For now, we keep static counts
+        }
+
+        function getJobTypeLabel(type) {
+            const labels = { fulltime: 'دوام كامل', parttime: 'دوام جزئي', remote: 'عن بُعد', contract: 'عقد مؤقت' };
+            return labels[type] || type;
+        }
+
+        function getSectorLabel(sector) {
+            const labels = { govt: 'حكومي', 'semi-govt': 'شبه حكومي', private: 'خاص' };
+            return labels[sector] || sector;
+        }
+
+        function getExperienceLabel(exp) {
+            const labels = { fresh: 'حديث التخرج', entry: '١-٣ سنوات', mid: '٤-٧ سنوات', senior: '+٨ سنوات' };
+            return labels[exp] || exp;
+        }
+
+        function formatSalaryRange(min, max) {
+            return `${toArabicNumber(min.toLocaleString())} - ${toArabicNumber(max.toLocaleString())} <span>ر.س/شهرياً</span>`;
+        }
+
+        function getPostedDateLabel(days) {
+            if (days === 0) return 'اليوم';
+            if (days === 1) return 'منذ يوم واحد';
+            if (days === 2) return 'منذ يومين';
+            if (days <= 7) return `منذ ${toArabicNumber(days)} أيام`;
+            if (days <= 14) return 'منذ أسبوع';
+            return 'منذ أسبوعين';
+        }
+
+        function setView(view, button) {
+            currentView = view;
+            document.querySelectorAll('.view-btn').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const grid = document.getElementById('jobsGrid');
+            if (view === 'list') {
+                grid.classList.add('list-view');
+            } else {
+                grid.classList.remove('list-view');
+            }
+        }
+
+        function toggleFilters() {
+            document.getElementById('filtersSidebar').classList.toggle('open');
+        }
+
+        // Language toggle
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
