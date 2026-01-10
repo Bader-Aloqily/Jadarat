@@ -1234,6 +1234,733 @@
         @media (max-width: 1024px) {
             .filter-toggle-mobile { display: flex; }
         }
+
+        /* ==================== PAGE SECTIONS ==================== */
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        /* ==================== HOME PAGE STYLES ==================== */
+        .btn-lg {
+            padding: 14px 32px;
+            font-size: 1.1rem;
+        }
+
+        .btn-full {
+            width: 100%;
+        }
+
+        .home-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+
+        .home-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-bottom: 64px;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 32px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--neutral-100);
+        }
+
+        .stat-card .stat-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 16px;
+            background: linear-gradient(135deg, var(--primary-100, #ccfbf1), var(--primary-200, #99f6e4));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stat-card .stat-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--primary-600);
+        }
+
+        .stat-card .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-700);
+            margin-bottom: 8px;
+        }
+
+        .stat-card .stat-label {
+            color: var(--neutral-500);
+            font-size: 0.95rem;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--neutral-900);
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .section-header .section-title {
+            margin-bottom: 0;
+            text-align: right;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            margin-bottom: 64px;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .step-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 32px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--neutral-100);
+            position: relative;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -16px;
+            right: 24px;
+            width: 36px;
+            height: 36px;
+            background: var(--primary-600);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .step-card .step-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.1), rgba(13, 148, 136, 0.15));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .step-card .step-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--primary-600);
+        }
+
+        .step-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--neutral-900);
+        }
+
+        .step-card p {
+            color: var(--neutral-500);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Featured Jobs */
+        .featured-section {
+            margin-bottom: 64px;
+        }
+
+        .featured-jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        /* Categories */
+        .categories-section {
+            margin-bottom: 64px;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 16px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--neutral-100);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .category-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+            border-color: var(--primary-300);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .category-name {
+            font-weight: 600;
+            color: var(--neutral-700);
+            font-size: 0.95rem;
+        }
+
+        /* ==================== COMPANIES PAGE STYLES ==================== */
+        .hero-compact {
+            padding: 32px 24px;
+        }
+
+        .hero-compact .hero-title {
+            font-size: 1.75rem;
+            margin-bottom: 8px;
+        }
+
+        .hero-compact .hero-subtitle {
+            font-size: 1rem;
+        }
+
+        .companies-content, .applications-content, .profile-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px 24px;
+        }
+
+        .companies-filters {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .sector-filter {
+            padding: 10px 24px;
+            border: 2px solid var(--neutral-200);
+            background: white;
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+            color: var(--neutral-600);
+        }
+
+        .sector-filter:hover {
+            border-color: var(--primary-400);
+            color: var(--primary-700);
+        }
+
+        .sector-filter.active {
+            background: var(--primary-600);
+            border-color: var(--primary-600);
+            color: white;
+        }
+
+        .companies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .company-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 24px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--neutral-100);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .company-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .company-logo-wrapper {
+            width: 64px;
+            height: 64px;
+            background: var(--neutral-100);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--neutral-600);
+        }
+
+        .company-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--neutral-900);
+        }
+
+        .company-card .company-sector {
+            font-size: 0.85rem;
+            color: var(--neutral-500);
+            margin-bottom: 12px;
+        }
+
+        .company-card .company-jobs {
+            font-size: 0.9rem;
+            color: var(--primary-600);
+            font-weight: 500;
+        }
+
+        /* ==================== APPLICATIONS PAGE STYLES ==================== */
+        .applications-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .application-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 24px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--neutral-100);
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .application-card .app-info h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--neutral-900);
+        }
+
+        .application-card .app-company {
+            color: var(--neutral-500);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .application-card .app-meta {
+            display: flex;
+            gap: 16px;
+            font-size: 0.85rem;
+            color: var(--neutral-400);
+        }
+
+        .app-status {
+            padding: 6px 16px;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .app-status.status-pending {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--warning);
+        }
+
+        .app-status.status-reviewed {
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+        }
+
+        .app-status.status-accepted {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+        }
+
+        .app-status.status-rejected {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--error);
+        }
+
+        .btn-withdraw {
+            padding: 8px 16px;
+            background: transparent;
+            border: 1px solid var(--error);
+            color: var(--error);
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .btn-withdraw:hover {
+            background: var(--error);
+            color: white;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 80px 24px;
+            background: white;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+        }
+
+        .empty-state svg {
+            width: 80px;
+            height: 80px;
+            stroke: var(--neutral-300);
+            margin-bottom: 24px;
+        }
+
+        .empty-state h3 {
+            font-size: 1.25rem;
+            color: var(--neutral-700);
+            margin-bottom: 8px;
+        }
+
+        .empty-state p {
+            color: var(--neutral-500);
+            margin-bottom: 24px;
+        }
+
+        /* ==================== PROFILE PAGE STYLES ==================== */
+        .profile-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 32px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-section {
+            margin-bottom: 32px;
+        }
+
+        .form-section h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--neutral-700);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--neutral-200);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            color: var(--neutral-700);
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--neutral-200);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.2s ease;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-400);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* ==================== MODAL STYLES ==================== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-content {
+            position: relative;
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 32px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-xl);
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            width: 36px;
+            height: 36px;
+            border: none;
+            background: var(--neutral-100);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .modal-close:hover {
+            background: var(--neutral-200);
+        }
+
+        .modal-close svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--neutral-600);
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--neutral-900);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .job-preview {
+            background: var(--neutral-50);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .job-preview h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--neutral-900);
+            margin-bottom: 4px;
+        }
+
+        .job-preview p {
+            color: var(--neutral-500);
+            font-size: 0.9rem;
+        }
+
+        /* ==================== TOAST STYLES ==================== */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--success);
+            color: white;
+            padding: 16px 24px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: var(--shadow-xl);
+            z-index: 1100;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        .toast svg {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+        }
+
+        /* ==================== MENU OVERLAY ==================== */
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 98;
+            backdrop-filter: blur(2px);
+        }
+
+        .mobile-menu-close {
+            display: none;
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: var(--neutral-100);
+            border-radius: 50%;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-menu-close svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--neutral-600);
+        }
+
+        @media (max-width: 1024px) {
+            .mobile-menu-close {
+                display: flex;
+            }
+
+            .nav.open {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 280px;
+                height: 100vh;
+                background: white;
+                padding: 70px 16px 16px;
+                box-shadow: var(--shadow-xl);
+                z-index: 99;
+                animation: slideIn 0.3s ease;
+            }
+
+            @keyframes slideIn {
+                from { transform: translateX(100%); }
+                to { transform: translateX(0); }
+            }
+        }
+
+        /* ==================== RTL/LTR SUPPORT ==================== */
+        [dir="ltr"] {
+            font-family: 'IBM Plex Sans Arabic', 'Segoe UI', sans-serif;
+        }
+
+        [dir="ltr"] .step-number {
+            right: auto;
+            left: 24px;
+        }
+
+        [dir="ltr"] .modal-close {
+            left: auto;
+            right: 16px;
+        }
+
+        [dir="ltr"] .mobile-menu-close {
+            left: auto;
+            right: 12px;
+        }
+
+        @media (max-width: 1024px) {
+            [dir="ltr"] .nav.open {
+                right: auto;
+                left: 0;
+            }
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            .home-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .application-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .application-card .app-actions {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1252,11 +1979,16 @@
             </a>
 
             <nav class="nav">
-                <a href="#" class="nav-link">الرئيسية</a>
-                <a href="#" class="nav-link active">الوظائف</a>
-                <a href="#" class="nav-link">الشركات</a>
-                <a href="#" class="nav-link">طلباتي</a>
-                <a href="#" class="nav-link">الملف الشخصي</a>
+                <button class="mobile-menu-close" onclick="closeMobileMenu()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </button>
+                <a href="#" class="nav-link" data-page="home" data-i18n="nav.home" onclick="navigateTo(''); return false;">الرئيسية</a>
+                <a href="#jobs" class="nav-link" data-page="jobs" data-i18n="nav.jobs" onclick="navigateTo('jobs'); return false;">الوظائف</a>
+                <a href="#companies" class="nav-link" data-page="companies" data-i18n="nav.companies" onclick="navigateTo('companies'); return false;">الشركات</a>
+                <a href="#applications" class="nav-link" data-page="applications" data-i18n="nav.applications" onclick="navigateTo('applications'); return false;">طلباتي</a>
+                <a href="#profile" class="nav-link" data-page="profile" data-i18n="nav.profile" onclick="navigateTo('profile'); return false;">الملف الشخصي</a>
             </nav>
 
             <div class="header-actions">
@@ -1275,10 +2007,149 @@
         </div>
     </header>
 
+    <!-- Menu Overlay for Mobile -->
+    <div id="menuOverlay" class="menu-overlay" onclick="closeMobileMenu()" style="display:none;"></div>
+
+    <!-- ==================== HOME PAGE ==================== -->
+    <div id="page-home" class="page-section">
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title" data-i18n="home.title">مرحباً بك في جدارات</h1>
+                <p class="hero-subtitle" data-i18n="home.subtitle">المنصة الوطنية الموحدة للتوظيف في المملكة العربية السعودية</p>
+                <button class="btn btn-primary btn-lg" onclick="navigateTo('jobs')" data-i18n="home.browseJobs">استعرض الوظائف المتاحة</button>
+            </div>
+        </section>
+
+        <div class="home-content">
+            <!-- Statistics -->
+            <div class="home-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                            <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
+                        </svg>
+                    </div>
+                    <div class="stat-value" id="homeJobsCount">50</div>
+                    <div class="stat-label" data-i18n="home.availableJobs">وظيفة متاحة</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 21h18"/>
+                            <path d="M5 21V7l8-4v18"/>
+                            <path d="M19 21V11l-6-4"/>
+                        </svg>
+                    </div>
+                    <div class="stat-value" id="homeCompaniesCount">12</div>
+                    <div class="stat-label" data-i18n="home.companies">شركة ومؤسسة</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 010 7.75"/>
+                        </svg>
+                    </div>
+                    <div class="stat-value">2,300+</div>
+                    <div class="stat-label" data-i18n="home.hiredThisMonth">تم توظيفهم هذا الشهر</div>
+                </div>
+            </div>
+
+            <!-- How It Works -->
+            <div class="how-it-works">
+                <h2 class="section-title" data-i18n="home.howItWorks">كيف يعمل جدارات؟</h2>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="M21 21l-4.35-4.35"/>
+                            </svg>
+                        </div>
+                        <h3 data-i18n="home.step1Title">ابحث عن الوظائف</h3>
+                        <p data-i18n="home.step1Desc">استخدم الفلاتر المتقدمة للعثور على الوظيفة المناسبة لمؤهلاتك</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                                <polyline points="14,2 14,8 20,8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                            </svg>
+                        </div>
+                        <h3 data-i18n="home.step2Title">قدم طلبك</h3>
+                        <p data-i18n="home.step2Desc">أرسل طلبك مباشرة من خلال المنصة بضغطة واحدة</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                <polyline points="22,4 12,14.01 9,11.01"/>
+                            </svg>
+                        </div>
+                        <h3 data-i18n="home.step3Title">احصل على الوظيفة</h3>
+                        <p data-i18n="home.step3Desc">تابع حالة طلبك وانتظر التواصل من الجهة الموظفة</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Jobs Preview -->
+            <div class="featured-section">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="home.featuredJobs">أحدث الوظائف</h2>
+                    <button class="btn btn-ghost" onclick="navigateTo('jobs')" data-i18n="home.viewAll">عرض الكل</button>
+                </div>
+                <div class="featured-jobs-grid" id="featuredJobsGrid">
+                    <!-- Rendered by JS -->
+                </div>
+            </div>
+
+            <!-- Job Categories -->
+            <div class="categories-section">
+                <h2 class="section-title" data-i18n="home.browseByCategory">تصفح حسب التخصص</h2>
+                <div class="categories-grid">
+                    <div class="category-card" onclick="navigateTo('jobs'); setTimeout(() => filterBySpecialization('it'), 100);">
+                        <span class="category-icon">💻</span>
+                        <span class="category-name" data-i18n="categories.it">تقنية المعلومات</span>
+                    </div>
+                    <div class="category-card" onclick="navigateTo('jobs'); setTimeout(() => filterBySpecialization('engineering'), 100);">
+                        <span class="category-icon">⚙️</span>
+                        <span class="category-name" data-i18n="categories.engineering">الهندسة</span>
+                    </div>
+                    <div class="category-card" onclick="navigateTo('jobs'); setTimeout(() => filterBySpecialization('medical'), 100);">
+                        <span class="category-icon">🏥</span>
+                        <span class="category-name" data-i18n="categories.medical">الطب والصحة</span>
+                    </div>
+                    <div class="category-card" onclick="navigateTo('jobs'); setTimeout(() => filterBySpecialization('accounting'), 100);">
+                        <span class="category-icon">💰</span>
+                        <span class="category-name" data-i18n="categories.accounting">المحاسبة والمالية</span>
+                    </div>
+                    <div class="category-card" onclick="navigateTo('jobs'); setTimeout(() => filterBySpecialization('education'), 100);">
+                        <span class="category-icon">🎓</span>
+                        <span class="category-name" data-i18n="categories.education">التعليم</span>
+                    </div>
+                    <div class="category-card" onclick="navigateTo('jobs'); setTimeout(() => filterBySpecialization('marketing'), 100);">
+                        <span class="category-icon">📢</span>
+                        <span class="category-name" data-i18n="categories.marketing">التسويق والإعلام</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== JOBS PAGE ==================== -->
+    <div id="page-jobs" class="page-section active">
     <section class="hero">
         <div class="hero-content">
             <h1 class="hero-title">اكتشف الفرص الوظيفية المناسبة لك</h1>
-            <p class="hero-subtitle">أكثر من ٣٨,٠٠٠ فرصة عمل في القطاعين الحكومي والخاص</p>
+            <p class="hero-subtitle" data-i18n="jobs.heroSubtitle">أكثر من 38,000 فرصة عمل في القطاعين الحكومي والخاص</p>
 
             <div class="search-box">
                 <div class="search-field">
@@ -1470,6 +2341,145 @@
             <div id="pagination" class="pagination"></div>
         </section>
     </main>
+    </div>
+    <!-- END JOBS PAGE -->
+
+    <!-- ==================== COMPANIES PAGE ==================== -->
+    <div id="page-companies" class="page-section">
+        <section class="hero hero-compact">
+            <div class="hero-content">
+                <h1 class="hero-title" data-i18n="companies.title">الشركات والمؤسسات</h1>
+                <p class="hero-subtitle" data-i18n="companies.subtitle">تصفح أفضل جهات التوظيف في المملكة</p>
+            </div>
+        </section>
+        <div class="companies-content">
+            <div class="companies-filters">
+                <button class="sector-filter active" data-sector="all" onclick="filterCompanies('all')" data-i18n="companies.all">الكل</button>
+                <button class="sector-filter" data-sector="govt" onclick="filterCompanies('govt')" data-i18n="companies.govt">حكومي</button>
+                <button class="sector-filter" data-sector="semi-govt" onclick="filterCompanies('semi-govt')" data-i18n="companies.semiGovt">شبه حكومي</button>
+                <button class="sector-filter" data-sector="private" onclick="filterCompanies('private')" data-i18n="companies.private">خاص</button>
+            </div>
+            <div class="companies-grid" id="companiesGrid">
+                <!-- Rendered by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== MY APPLICATIONS PAGE ==================== -->
+    <div id="page-applications" class="page-section">
+        <section class="hero hero-compact">
+            <div class="hero-content">
+                <h1 class="hero-title" data-i18n="applications.title">طلباتي</h1>
+                <p class="hero-subtitle" data-i18n="applications.subtitle">تابع حالة طلبات التوظيف الخاصة بك</p>
+            </div>
+        </section>
+        <div class="applications-content">
+            <div class="applications-list" id="applicationsList">
+                <!-- Rendered by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== PROFILE PAGE ==================== -->
+    <div id="page-profile" class="page-section">
+        <section class="hero hero-compact">
+            <div class="hero-content">
+                <h1 class="hero-title" data-i18n="profile.title">الملف الشخصي</h1>
+                <p class="hero-subtitle" data-i18n="profile.subtitle">أكمل معلوماتك لتسهيل عملية التقديم</p>
+            </div>
+        </section>
+        <div class="profile-content">
+            <form id="profileForm" class="profile-form">
+                <div class="form-section">
+                    <h3 data-i18n="profile.personalInfo">المعلومات الشخصية</h3>
+                    <div class="form-group">
+                        <label data-i18n="profile.fullName">الاسم الكامل</label>
+                        <input type="text" id="profileName" data-i18n-placeholder="profile.fullNamePlaceholder" placeholder="أدخل اسمك الكامل">
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="profile.email">البريد الإلكتروني</label>
+                        <input type="email" id="profileEmail" data-i18n-placeholder="profile.emailPlaceholder" placeholder="example@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="profile.phone">رقم الجوال</label>
+                        <input type="tel" id="profilePhone" data-i18n-placeholder="profile.phonePlaceholder" placeholder="05xxxxxxxx">
+                    </div>
+                </div>
+                <div class="form-section">
+                    <h3 data-i18n="profile.experience">الخبرة المهنية</h3>
+                    <div class="form-group">
+                        <label data-i18n="profile.experienceLevel">مستوى الخبرة</label>
+                        <select id="profileExperience">
+                            <option value="fresh" data-i18n="experience.fresh">حديث التخرج</option>
+                            <option value="entry" data-i18n="experience.entry">1-3 سنوات</option>
+                            <option value="mid" data-i18n="experience.mid">4-7 سنوات</option>
+                            <option value="senior" data-i18n="experience.senior">+8 سنوات</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="profile.specialization">التخصص</label>
+                        <select id="profileSpecialization">
+                            <option value="it" data-i18n="categories.it">تقنية المعلومات</option>
+                            <option value="engineering" data-i18n="categories.engineering">الهندسة</option>
+                            <option value="medical" data-i18n="categories.medical">الطب والصحة</option>
+                            <option value="accounting" data-i18n="categories.accounting">المحاسبة والمالية</option>
+                            <option value="education" data-i18n="categories.education">التعليم</option>
+                            <option value="marketing" data-i18n="categories.marketing">التسويق والإعلام</option>
+                            <option value="hr" data-i18n="categories.hr">الموارد البشرية</option>
+                            <option value="legal" data-i18n="categories.legal">القانون</option>
+                            <option value="other" data-i18n="categories.other">أخرى</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="button" onclick="saveProfile()" class="btn btn-primary btn-lg" data-i18n="profile.save">حفظ المعلومات</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==================== APPLY MODAL ==================== -->
+    <div id="applyModal" class="modal">
+        <div class="modal-overlay" onclick="closeApplyModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeApplyModal()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+            </button>
+            <h2 class="modal-title" data-i18n="apply.title">التقديم على الوظيفة</h2>
+            <div class="job-preview">
+                <h3 id="applyJobTitle"></h3>
+                <p id="applyJobCompany"></p>
+            </div>
+            <form id="applyForm" onsubmit="submitApplication(event)">
+                <div class="form-group">
+                    <label data-i18n="apply.fullName">الاسم الكامل</label>
+                    <input type="text" id="applicantName" required data-i18n-placeholder="apply.fullNamePlaceholder" placeholder="أدخل اسمك الكامل">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="apply.email">البريد الإلكتروني</label>
+                    <input type="email" id="applicantEmail" required data-i18n-placeholder="apply.emailPlaceholder" placeholder="example@email.com">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="apply.phone">رقم الجوال</label>
+                    <input type="tel" id="applicantPhone" required data-i18n-placeholder="apply.phonePlaceholder" placeholder="05xxxxxxxx">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="apply.coverLetter">رسالة تعريفية (اختياري)</label>
+                    <textarea id="applicantCover" rows="4" data-i18n-placeholder="apply.coverLetterPlaceholder" placeholder="اكتب رسالة قصيرة عن نفسك..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-full" data-i18n="apply.submit">إرسال الطلب</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==================== SUCCESS TOAST ==================== -->
+    <div id="successToast" class="toast">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+            <polyline points="22,4 12,14.01 9,11.01"/>
+        </svg>
+        <span id="toastMessage"></span>
+    </div>
 
     <script>
         // Real job data based on Jadarat listings
@@ -2428,11 +3438,13 @@
         }
 
         function formatSalary(value) {
-            return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",").replace(/[0-9]/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
+            // Use Western numerals with comma separators
+            return value.toLocaleString('en-US');
         }
 
         function toArabicNumber(num) {
-            return num.toString().replace(/[0-9]/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
+            // Use Western numerals (0-9) instead of Hindi/Arabic numerals
+            return num.toLocaleString('en-US');
         }
 
         // Generate consistent applicant count based on job ID
@@ -2767,7 +3779,7 @@
                             <div class="job-salary">${formatSalaryRange(job.salaryMin, job.salaryMax)}</div>
                             <div class="job-date">${getPostedDateLabel(job.postedDays)}</div>
                         </div>
-                        <button class="apply-btn">تقديم</button>
+                        <button class="apply-btn" onclick="openApplyModal(${job.id})">${getTranslation('jobs.apply')}</button>
                     </div>
                 </article>
             `}).join('');
@@ -2991,12 +4003,428 @@
             document.getElementById('filtersSidebar').classList.toggle('open');
         }
 
-        // Language toggle
+        // ==================== TRANSLATIONS ====================
+        const translations = {
+            ar: {
+                nav: { home: 'الرئيسية', jobs: 'الوظائف', companies: 'الشركات', applications: 'طلباتي', profile: 'الملف الشخصي' },
+                home: {
+                    title: 'مرحباً بك في جدارات',
+                    subtitle: 'المنصة الوطنية الموحدة للتوظيف في المملكة العربية السعودية',
+                    browseJobs: 'استعرض الوظائف المتاحة',
+                    availableJobs: 'وظيفة متاحة',
+                    companies: 'شركة ومؤسسة',
+                    hiredThisMonth: 'تم توظيفهم هذا الشهر',
+                    howItWorks: 'كيف يعمل جدارات؟',
+                    step1Title: 'ابحث عن الوظائف',
+                    step1Desc: 'استخدم الفلاتر المتقدمة للعثور على الوظيفة المناسبة لمؤهلاتك',
+                    step2Title: 'قدم طلبك',
+                    step2Desc: 'أرسل طلبك مباشرة من خلال المنصة بضغطة واحدة',
+                    step3Title: 'احصل على الوظيفة',
+                    step3Desc: 'تابع حالة طلبك وانتظر التواصل من الجهة الموظفة',
+                    featuredJobs: 'أحدث الوظائف',
+                    viewAll: 'عرض الكل',
+                    browseByCategory: 'تصفح حسب التخصص'
+                },
+                companies: { title: 'الشركات والمؤسسات', subtitle: 'تصفح أفضل جهات التوظيف في المملكة', all: 'الكل', govt: 'حكومي', semiGovt: 'شبه حكومي', private: 'خاص', jobsCount: 'وظيفة' },
+                applications: { title: 'طلباتي', subtitle: 'تابع حالة طلبات التوظيف الخاصة بك', noApplications: 'لا توجد طلبات', noApplicationsDesc: 'لم تتقدم على أي وظيفة بعد', browseJobs: 'استعرض الوظائف', appliedOn: 'تقدمت بتاريخ', withdraw: 'سحب الطلب' },
+                profile: { title: 'الملف الشخصي', subtitle: 'أكمل معلوماتك لتسهيل عملية التقديم', personalInfo: 'المعلومات الشخصية', fullName: 'الاسم الكامل', email: 'البريد الإلكتروني', phone: 'رقم الجوال', experience: 'الخبرة المهنية', experienceLevel: 'مستوى الخبرة', specialization: 'التخصص', save: 'حفظ المعلومات', fullNamePlaceholder: 'أدخل اسمك الكامل', emailPlaceholder: 'example@email.com', phonePlaceholder: '05xxxxxxxx' },
+                apply: { title: 'التقديم على الوظيفة', fullName: 'الاسم الكامل', email: 'البريد الإلكتروني', phone: 'رقم الجوال', coverLetter: 'رسالة تعريفية (اختياري)', submit: 'إرسال الطلب', fullNamePlaceholder: 'أدخل اسمك الكامل', emailPlaceholder: 'example@email.com', phonePlaceholder: '05xxxxxxxx', coverLetterPlaceholder: 'اكتب رسالة قصيرة عن نفسك...' },
+                categories: { it: 'تقنية المعلومات', engineering: 'الهندسة', medical: 'الطب والصحة', accounting: 'المحاسبة والمالية', education: 'التعليم', marketing: 'التسويق والإعلام', hr: 'الموارد البشرية', legal: 'القانون', other: 'أخرى' },
+                experience: { fresh: 'حديث التخرج', entry: '1-3 سنوات', mid: '4-7 سنوات', senior: '+8 سنوات' },
+                status: { pending: 'قيد المراجعة', reviewed: 'تمت المراجعة', accepted: 'مقبول', rejected: 'مرفوض' },
+                toast: { applicationSent: 'تم إرسال طلبك بنجاح!', applicationWithdrawn: 'تم سحب الطلب', profileSaved: 'تم حفظ الملف الشخصي' },
+                jobs: { apply: 'تقديم', applicants: 'متقدم لهذه الوظيفة', showingJobs: 'عرض', job: 'وظيفة', heroSubtitle: 'أكثر من 38,000 فرصة عمل في القطاعين الحكومي والخاص' }
+            },
+            en: {
+                nav: { home: 'Home', jobs: 'Jobs', companies: 'Companies', applications: 'My Applications', profile: 'Profile' },
+                home: {
+                    title: 'Welcome to Jadarat',
+                    subtitle: 'The National Unified Employment Platform in Saudi Arabia',
+                    browseJobs: 'Browse Available Jobs',
+                    availableJobs: 'Available Jobs',
+                    companies: 'Companies',
+                    hiredThisMonth: 'Hired This Month',
+                    howItWorks: 'How Jadarat Works?',
+                    step1Title: 'Search Jobs',
+                    step1Desc: 'Use advanced filters to find the job that matches your qualifications',
+                    step2Title: 'Apply',
+                    step2Desc: 'Send your application directly through the platform with one click',
+                    step3Title: 'Get Hired',
+                    step3Desc: 'Track your application status and wait for contact from the employer',
+                    featuredJobs: 'Latest Jobs',
+                    viewAll: 'View All',
+                    browseByCategory: 'Browse by Category'
+                },
+                companies: { title: 'Companies & Organizations', subtitle: 'Browse top employers in the Kingdom', all: 'All', govt: 'Government', semiGovt: 'Semi-Government', private: 'Private', jobsCount: 'jobs' },
+                applications: { title: 'My Applications', subtitle: 'Track your job application status', noApplications: 'No Applications', noApplicationsDesc: 'You haven\'t applied to any job yet', browseJobs: 'Browse Jobs', appliedOn: 'Applied on', withdraw: 'Withdraw' },
+                profile: { title: 'Profile', subtitle: 'Complete your information to simplify the application process', personalInfo: 'Personal Information', fullName: 'Full Name', email: 'Email', phone: 'Phone Number', experience: 'Professional Experience', experienceLevel: 'Experience Level', specialization: 'Specialization', save: 'Save Information', fullNamePlaceholder: 'Enter your full name', emailPlaceholder: 'example@email.com', phonePlaceholder: '05xxxxxxxx' },
+                apply: { title: 'Apply for Job', fullName: 'Full Name', email: 'Email', phone: 'Phone Number', coverLetter: 'Cover Letter (Optional)', submit: 'Submit Application', fullNamePlaceholder: 'Enter your full name', emailPlaceholder: 'example@email.com', phonePlaceholder: '05xxxxxxxx', coverLetterPlaceholder: 'Write a short message about yourself...' },
+                categories: { it: 'Information Technology', engineering: 'Engineering', medical: 'Medicine & Health', accounting: 'Accounting & Finance', education: 'Education', marketing: 'Marketing & Media', hr: 'Human Resources', legal: 'Law', other: 'Other' },
+                experience: { fresh: 'Fresh Graduate', entry: '1-3 Years', mid: '4-7 Years', senior: '8+ Years' },
+                status: { pending: 'Under Review', reviewed: 'Reviewed', accepted: 'Accepted', rejected: 'Rejected' },
+                toast: { applicationSent: 'Your application has been sent successfully!', applicationWithdrawn: 'Application withdrawn', profileSaved: 'Profile saved' },
+                jobs: { apply: 'Apply', applicants: 'applicants', showingJobs: 'Showing', job: 'jobs', heroSubtitle: 'Over 38,000 job opportunities in public and private sectors' }
+            }
+        };
+
+        let currentLang = 'ar';
+
+        function getTranslation(key) {
+            const keys = key.split('.');
+            let value = translations[currentLang];
+            for (const k of keys) {
+                value = value?.[k];
+            }
+            return value || key;
+        }
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+            // Update toggle buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', (lang === 'ar' && btn.textContent === 'عربي') || (lang === 'en' && btn.textContent === 'EN'));
+            });
+
+            // Update all data-i18n elements
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.dataset.i18n;
+                el.textContent = getTranslation(key);
+            });
+
+            // Update placeholders
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.dataset.i18nPlaceholder;
+                el.placeholder = getTranslation(key);
+            });
+
+            // Re-render dynamic content
+            if (typeof applyFilters === 'function') applyFilters();
+            if (typeof renderApplications === 'function') renderApplications();
+            if (typeof renderCompanies === 'function') renderCompanies();
+            if (typeof renderFeaturedJobs === 'function') renderFeaturedJobs();
+        }
+
+        // Language toggle event listeners
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.addEventListener('click', function() {
-                document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
+                const lang = this.textContent === 'EN' ? 'en' : 'ar';
+                setLanguage(lang);
             });
+        });
+
+        // ==================== ROUTING ====================
+        function navigateTo(page) {
+            window.location.hash = page || '';
+            closeMobileMenu();
+        }
+
+        function handleRoute() {
+            const hash = window.location.hash.slice(1) || '';
+            const pageMap = { '': 'home', 'jobs': 'jobs', 'companies': 'companies', 'applications': 'applications', 'profile': 'profile' };
+            const page = pageMap[hash] || 'home';
+
+            // Hide all pages
+            document.querySelectorAll('.page-section').forEach(p => p.classList.remove('active'));
+
+            // Show target page
+            const targetPage = document.getElementById(`page-${page}`);
+            if (targetPage) targetPage.classList.add('active');
+
+            // Update nav active state
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.toggle('active', link.dataset.page === page);
+            });
+
+            // Render page-specific content
+            if (page === 'applications') renderApplications();
+            if (page === 'companies') renderCompanies();
+            if (page === 'home') renderFeaturedJobs();
+            if (page === 'profile') loadProfile();
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        window.addEventListener('hashchange', handleRoute);
+
+        // ==================== MOBILE MENU ====================
+        function toggleMobileMenu() {
+            const nav = document.querySelector('.nav');
+            const overlay = document.getElementById('menuOverlay');
+            const isOpen = nav.classList.toggle('open');
+            if (overlay) overlay.style.display = isOpen ? 'block' : 'none';
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        }
+
+        function closeMobileMenu() {
+            document.querySelector('.nav')?.classList.remove('open');
+            const overlay = document.getElementById('menuOverlay');
+            if (overlay) overlay.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        // Mobile menu button
+        document.querySelector('.mobile-menu-btn')?.addEventListener('click', toggleMobileMenu);
+
+        // ==================== APPLY MODAL ====================
+        let selectedJob = null;
+
+        function openApplyModal(jobId) {
+            selectedJob = jobsData.find(j => j.id === jobId);
+            if (!selectedJob) return;
+
+            document.getElementById('applyJobTitle').textContent = selectedJob.title;
+            document.getElementById('applyJobCompany').textContent = selectedJob.company;
+
+            // Pre-fill from profile if available
+            const profile = JSON.parse(sessionStorage.getItem('profile') || '{}');
+            if (profile.name) document.getElementById('applicantName').value = profile.name;
+            if (profile.email) document.getElementById('applicantEmail').value = profile.email;
+            if (profile.phone) document.getElementById('applicantPhone').value = profile.phone;
+
+            document.getElementById('applyModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeApplyModal() {
+            document.getElementById('applyModal').classList.remove('active');
+            document.getElementById('applyForm').reset();
+            document.body.style.overflow = '';
+        }
+
+        function submitApplication(e) {
+            e.preventDefault();
+
+            const application = {
+                id: Date.now(),
+                jobId: selectedJob.id,
+                jobTitle: selectedJob.title,
+                company: selectedJob.company,
+                applicantName: document.getElementById('applicantName').value,
+                applicantEmail: document.getElementById('applicantEmail').value,
+                applicantPhone: document.getElementById('applicantPhone').value,
+                coverLetter: document.getElementById('applicantCover').value,
+                appliedAt: new Date().toISOString(),
+                status: 'pending'
+            };
+
+            // Save to sessionStorage
+            const apps = JSON.parse(sessionStorage.getItem('applications') || '[]');
+            apps.push(application);
+            sessionStorage.setItem('applications', JSON.stringify(apps));
+
+            closeApplyModal();
+            showToast(getTranslation('toast.applicationSent'));
+        }
+
+        // ==================== APPLICATIONS PAGE ====================
+        function renderApplications() {
+            const apps = JSON.parse(sessionStorage.getItem('applications') || '[]');
+            const container = document.getElementById('applicationsList');
+            if (!container) return;
+
+            if (apps.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                            <polyline points="14,2 14,8 20,8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                        </svg>
+                        <h3 data-i18n="applications.noApplications">${getTranslation('applications.noApplications')}</h3>
+                        <p data-i18n="applications.noApplicationsDesc">${getTranslation('applications.noApplicationsDesc')}</p>
+                        <button class="btn btn-primary" onclick="navigateTo('jobs')" data-i18n="applications.browseJobs">${getTranslation('applications.browseJobs')}</button>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = apps.map(app => `
+                <div class="application-card">
+                    <div class="app-info">
+                        <h3>${app.jobTitle}</h3>
+                        <p class="app-company">${app.company}</p>
+                        <div class="app-meta">
+                            <span>${getTranslation('applications.appliedOn')}: ${formatAppDate(app.appliedAt)}</span>
+                        </div>
+                    </div>
+                    <div class="app-actions">
+                        <span class="app-status status-${app.status}">${getTranslation('status.' + app.status)}</span>
+                        <button class="btn-withdraw" onclick="withdrawApplication(${app.id})" data-i18n="applications.withdraw">${getTranslation('applications.withdraw')}</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function withdrawApplication(appId) {
+            let apps = JSON.parse(sessionStorage.getItem('applications') || '[]');
+            apps = apps.filter(a => a.id !== appId);
+            sessionStorage.setItem('applications', JSON.stringify(apps));
+            renderApplications();
+            showToast(getTranslation('toast.applicationWithdrawn'));
+        }
+
+        function formatAppDate(isoDate) {
+            const date = new Date(isoDate);
+            return date.toLocaleDateString(currentLang === 'ar' ? 'ar-SA' : 'en-US');
+        }
+
+        // ==================== PROFILE PAGE ====================
+        function loadProfile() {
+            const profile = JSON.parse(sessionStorage.getItem('profile') || '{}');
+            const nameInput = document.getElementById('profileName');
+            const emailInput = document.getElementById('profileEmail');
+            const phoneInput = document.getElementById('profilePhone');
+            const expSelect = document.getElementById('profileExperience');
+            const specSelect = document.getElementById('profileSpecialization');
+
+            if (nameInput) nameInput.value = profile.name || '';
+            if (emailInput) emailInput.value = profile.email || '';
+            if (phoneInput) phoneInput.value = profile.phone || '';
+            if (expSelect) expSelect.value = profile.experience || 'fresh';
+            if (specSelect) specSelect.value = profile.specialization || 'it';
+        }
+
+        function saveProfile() {
+            const profile = {
+                name: document.getElementById('profileName')?.value || '',
+                email: document.getElementById('profileEmail')?.value || '',
+                phone: document.getElementById('profilePhone')?.value || '',
+                experience: document.getElementById('profileExperience')?.value || 'fresh',
+                specialization: document.getElementById('profileSpecialization')?.value || 'it'
+            };
+            sessionStorage.setItem('profile', JSON.stringify(profile));
+            showToast(getTranslation('toast.profileSaved'));
+        }
+
+        // ==================== COMPANIES PAGE ====================
+        let companySectorFilter = 'all';
+
+        function renderCompanies() {
+            const container = document.getElementById('companiesGrid');
+            if (!container) return;
+
+            // Get unique companies from jobs
+            const companiesMap = new Map();
+            jobsData.forEach(job => {
+                if (!companiesMap.has(job.company)) {
+                    companiesMap.set(job.company, {
+                        name: job.company,
+                        shortName: job.companyShort,
+                        sector: job.sector,
+                        jobCount: 1
+                    });
+                } else {
+                    companiesMap.get(job.company).jobCount++;
+                }
+            });
+
+            let companies = Array.from(companiesMap.values());
+
+            // Filter by sector
+            if (companySectorFilter !== 'all') {
+                companies = companies.filter(c => c.sector === companySectorFilter);
+            }
+
+            container.innerHTML = companies.map(company => `
+                <div class="company-card" onclick="viewCompanyJobs('${company.name.replace(/'/g, "\\'")}')">
+                    <div class="company-logo-wrapper">${company.shortName}</div>
+                    <h3>${company.name}</h3>
+                    <p class="company-sector">${getSectorLabel(company.sector)}</p>
+                    <p class="company-jobs">${company.jobCount} ${getTranslation('companies.jobsCount')}</p>
+                </div>
+            `).join('');
+        }
+
+        function filterCompanies(sector) {
+            companySectorFilter = sector;
+            document.querySelectorAll('.sector-filter').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.sector === sector);
+            });
+            renderCompanies();
+        }
+
+        function viewCompanyJobs(companyName) {
+            navigateTo('jobs');
+            setTimeout(() => {
+                document.getElementById('searchKeyword').value = companyName;
+                activeFilters.keyword = companyName;
+                applyFilters();
+            }, 100);
+        }
+
+        // ==================== HOME PAGE ====================
+        function renderFeaturedJobs() {
+            const container = document.getElementById('featuredJobsGrid');
+            if (!container) return;
+
+            const featuredJobs = jobsData.slice(0, 6);
+            container.innerHTML = featuredJobs.map(job => `
+                <div class="job-card" style="animation: none; opacity: 1; transform: none;">
+                    <div class="job-card-header">
+                        <div class="company-logo ${job.sector}">${job.companyShort}</div>
+                        <div class="job-card-info">
+                            <h3 class="job-title">${job.title}</h3>
+                            <p class="company-name">${job.company}</p>
+                        </div>
+                    </div>
+                    <div class="job-meta">
+                        <span class="job-meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            ${job.location}
+                        </span>
+                    </div>
+                    <div class="job-tags">
+                        <span class="job-tag sector-${job.sector}">${getSectorLabel(job.sector)}</span>
+                    </div>
+                    <div class="job-card-footer">
+                        <div class="job-salary">${formatSalaryRange(job.salaryMin, job.salaryMax)}</div>
+                        <button class="apply-btn" onclick="openApplyModal(${job.id})">${getTranslation('jobs.apply')}</button>
+                    </div>
+                </div>
+            `).join('');
+
+            // Update stats
+            const jobsCount = document.getElementById('homeJobsCount');
+            const companiesCount = document.getElementById('homeCompaniesCount');
+            if (jobsCount) jobsCount.textContent = jobsData.length;
+            if (companiesCount) {
+                const uniqueCompanies = new Set(jobsData.map(j => j.company));
+                companiesCount.textContent = uniqueCompanies.size;
+            }
+        }
+
+        function filterBySpecialization(spec) {
+            // Clear other specialization filters first
+            activeFilters.specializations = [spec];
+            document.querySelectorAll('[data-filter="specialization"]').forEach(el => {
+                el.classList.toggle('selected', el.dataset.value === spec);
+            });
+            applyFilters();
+        }
+
+        // ==================== TOAST ====================
+        function showToast(message) {
+            const toast = document.getElementById('successToast');
+            const messageEl = document.getElementById('toastMessage');
+            if (toast && messageEl) {
+                messageEl.textContent = message;
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 3000);
+            }
+        }
+
+        // ==================== INITIALIZE ====================
+        // Handle initial route on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            handleRoute();
         });
     </script>
 </body>
