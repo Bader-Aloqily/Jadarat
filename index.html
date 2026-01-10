@@ -80,6 +80,9 @@
         .filters-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--neutral-200); }
         .filters-title { font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; }
         .clear-filters { color: var(--primary-600); font-size: 0.85rem; cursor: pointer; font-weight: 500; background: none; border: none; font-family: inherit; }
+        .filters-header-actions { display: flex; align-items: center; gap: 12px; }
+        .filters-close-mobile { display: none; width: 36px; height: 36px; border-radius: 50%; border: none; background: var(--neutral-100); cursor: pointer; align-items: center; justify-content: center; }
+        .filters-close-mobile svg { width: 20px; height: 20px; }
         .filter-group { margin-bottom: 24px; }
         .filter-label { font-weight: 600; font-size: 0.9rem; color: var(--neutral-700); margin-bottom: 12px; display: block; }
         .filter-options { display: flex; flex-direction: column; gap: 6px; }
@@ -330,8 +333,9 @@
 
         @media (max-width: 1024px) {
             .main-content { grid-template-columns: 1fr; }
-            .filters-sidebar { position: static; display: none; }
+            .filters-sidebar { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 1000; border-radius: 0; display: none; overflow-y: auto; }
             .filters-sidebar.open { display: block; }
+            .filters-close-mobile { display: flex; }
             .nav { display: none; }
             .mobile-menu-btn { display: flex; }
             .filter-toggle-mobile { display: flex; }
@@ -776,7 +780,10 @@
             <aside class="filters-sidebar" id="filtersSidebar">
                 <div class="filters-header">
                     <span class="filters-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg><span data-ar="تصفية النتائج" data-en="Filter Results">تصفية النتائج</span></span>
-                    <button class="clear-filters" onclick="clearAllFilters()" data-ar="مسح الكل" data-en="Clear All">مسح الكل</button>
+                    <div class="filters-header-actions">
+                        <button class="clear-filters" onclick="clearAllFilters()" data-ar="مسح الكل" data-en="Clear All">مسح الكل</button>
+                        <button class="filters-close-mobile" onclick="toggleFilters()" aria-label="Close filters"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+                    </div>
                 </div>
                 <div class="filter-group"><label class="filter-label" data-ar="نوع العمل" data-en="Job Type">نوع العمل</label><div class="filter-options" id="jobTypeFilters"></div></div>
                 <div class="filter-group"><label class="filter-label" data-ar="القطاع" data-en="Sector">القطاع</label><div class="sector-filter-group" id="sectorFilters"></div></div>
