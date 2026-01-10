@@ -444,13 +444,18 @@
         .stage-connector.completed { background: #10b981; }
 
         /* Mini Hiring Stages for Job Cards */
-        .job-card-stages { display: flex; align-items: center; gap: 8px; margin: 12px 0; padding: 10px 12px; background: var(--neutral-50); border-radius: var(--radius-md); }
-        .mini-stages { display: flex; align-items: center; gap: 3px; flex: 1; }
-        .mini-stage { width: 100%; height: 6px; background: var(--neutral-200); border-radius: 3px; transition: all 0.3s; }
-        .mini-stage.completed { background: #10b981; }
-        .mini-stage.active { background: var(--primary-500); animation: pulse 1.5s infinite; }
-        .stages-label { font-size: 0.75rem; color: var(--neutral-500); white-space: nowrap; }
-        .stages-label strong { color: var(--primary-700); }
+        .job-card-stages { margin: 12px 0; padding: 12px; background: var(--neutral-50); border-radius: var(--radius-md); }
+        .job-card-stages-title { font-size: 0.75rem; color: var(--neutral-500); margin-bottom: 10px; font-weight: 500; }
+        .mini-stages { display: flex; align-items: flex-start; justify-content: space-between; gap: 4px; }
+        .mini-stage { display: flex; flex-direction: column; align-items: center; flex: 1; }
+        .mini-stage-dot { width: 24px; height: 24px; border-radius: 50%; background: var(--neutral-200); display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 600; color: var(--neutral-500); transition: all 0.3s; }
+        .mini-stage.completed .mini-stage-dot { background: #10b981; color: white; }
+        .mini-stage.active .mini-stage-dot { background: var(--primary-600); color: white; box-shadow: 0 0 0 3px rgba(20,184,166,0.2); }
+        .mini-stage-label { font-size: 0.6rem; color: var(--neutral-400); margin-top: 4px; text-align: center; line-height: 1.2; max-width: 50px; }
+        .mini-stage.completed .mini-stage-label { color: #059669; }
+        .mini-stage.active .mini-stage-label { color: var(--primary-700); font-weight: 500; }
+        .mini-stage-connector { width: 100%; height: 2px; background: var(--neutral-200); margin-top: 11px; flex: 0 0 8px; max-width: 8px; }
+        .mini-stage-connector.completed { background: #10b981; }
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
         .job-card-applicants { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: var(--neutral-500); margin-bottom: 8px; }
         .job-card-applicants svg { width: 16px; height: 16px; stroke: var(--primary-500); }
@@ -1082,10 +1087,16 @@ function renderFeaturedJobs() {
                 <span><strong>${getApplicantCount(job.id)}</strong> ${translations.applicants[currentLang]}</span>
             </div>
             <div class="job-card-stages">
+                <div class="job-card-stages-title">${currentLang === 'ar' ? 'مراحل التوظيف' : 'Hiring Process'}</div>
                 <div class="mini-stages">
-                    ${[0,1,2,3,4].map(i => `<div class="mini-stage ${i < getHiringStage(job.id) ? 'completed' : i === getHiringStage(job.id) ? 'active' : ''}"></div>`).join('')}
+                    ${translations.hiringStages[currentLang].map((stage, i) => `
+                        <div class="mini-stage ${i < getHiringStage(job.id) ? 'completed' : i === getHiringStage(job.id) ? 'active' : ''}">
+                            <div class="mini-stage-dot">${i < getHiringStage(job.id) ? '✓' : i + 1}</div>
+                            <span class="mini-stage-label">${stage}</span>
+                        </div>
+                        ${i < 4 ? `<div class="mini-stage-connector ${i < getHiringStage(job.id) ? 'completed' : ''}"></div>` : ''}
+                    `).join('')}
                 </div>
-                <span class="stages-label">${translations.hiringStages[currentLang][getHiringStage(job.id)]}</span>
             </div>
             <div class="job-card-footer">
                 <div class="job-salary">${toArabicNum(job.salaryMin)} - ${toArabicNum(job.salaryMax)} <span>${currentLang==='ar'?'ر.س':'SAR'}</span></div>
@@ -1330,10 +1341,16 @@ function renderJobs(jobs) {
                 <span><strong>${getApplicantCount(j.id)}</strong> ${translations.applicants[currentLang]}</span>
             </div>
             <div class="job-card-stages">
+                <div class="job-card-stages-title">${currentLang === 'ar' ? 'مراحل التوظيف' : 'Hiring Process'}</div>
                 <div class="mini-stages">
-                    ${[0,1,2,3,4].map(i => `<div class="mini-stage ${i < getHiringStage(j.id) ? 'completed' : i === getHiringStage(j.id) ? 'active' : ''}"></div>`).join('')}
+                    ${translations.hiringStages[currentLang].map((stage, i) => `
+                        <div class="mini-stage ${i < getHiringStage(j.id) ? 'completed' : i === getHiringStage(j.id) ? 'active' : ''}">
+                            <div class="mini-stage-dot">${i < getHiringStage(j.id) ? '✓' : i + 1}</div>
+                            <span class="mini-stage-label">${stage}</span>
+                        </div>
+                        ${i < 4 ? `<div class="mini-stage-connector ${i < getHiringStage(j.id) ? 'completed' : ''}"></div>` : ''}
+                    `).join('')}
                 </div>
-                <span class="stages-label">${translations.hiringStages[currentLang][getHiringStage(j.id)]}</span>
             </div>
             <div class="job-card-footer">
                 <div><div class="job-salary">${formatSalary(j.salaryMin)} - ${formatSalary(j.salaryMax)} <span>${translations.currency[currentLang]}</span></div><div class="job-date">${translations.postedLabels[currentLang](j.postedDays)}</div></div>
