@@ -77,6 +77,7 @@
 
         /* Filters */
         .filter-backdrop { display: none; }
+        .filters-floating-close { display: none; }
         .filters-sidebar { background: white; border-radius: var(--radius-xl); padding: 24px; height: fit-content; position: sticky; top: 104px; box-shadow: var(--shadow-md); border: 1px solid var(--neutral-100); }
         .filters-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--neutral-200); background: white; }
         .filters-title { font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; }
@@ -345,6 +346,9 @@
             .filter-backdrop.open { display: block; }
             .filters-sidebar .filters-header { position: sticky; top: 0; z-index: 10; margin: -24px -24px 24px -24px; padding: 20px 24px; padding-top: calc(20px + env(safe-area-inset-top)); border-bottom: 1px solid var(--neutral-200); background: white; }
             .filters-close-mobile { display: flex; }
+            .filters-floating-close { display: flex; position: fixed; top: calc(16px + env(safe-area-inset-top)); left: 16px; width: 44px; height: 44px; background: white; border: none; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.15); align-items: center; justify-content: center; z-index: 1002; cursor: pointer; }
+            .filters-floating-close svg { width: 24px; height: 24px; stroke: var(--neutral-700); }
+            .filters-floating-close:active { background: var(--neutral-100); }
             .show-results-btn { display: block; position: sticky; bottom: calc(20px + env(safe-area-inset-bottom)); margin-top: 24px; box-shadow: 0 -4px 20px rgba(0,0,0,0.1); background: var(--primary-600); }
             .nav { display: none; }
             .mobile-menu-btn { display: flex; }
@@ -789,6 +793,7 @@
         <main class="main-content">
             <div class="filter-backdrop" id="filterBackdrop" onclick="toggleFilters()"></div>
             <aside class="filters-sidebar" id="filtersSidebar">
+                <button class="filters-floating-close" onclick="toggleFilters()" aria-label="Close filters"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
                 <div class="filters-header">
                     <span class="filters-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg><span data-ar="تصفية النتائج" data-en="Filter Results">تصفية النتائج</span></span>
                     <div class="filters-header-actions">
