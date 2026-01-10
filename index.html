@@ -943,8 +943,8 @@ const translations = {
 };
 
 // Use Western numerals (0-9) always per user request
-function toArabicNum(n) { return n.toLocaleString('en-US'); }
-function formatSalary(v) { return v.toLocaleString('en-US'); }
+function toArabicNum(n) { return n != null ? n.toLocaleString('en-US') : '-'; }
+function formatSalary(v) { return v ? v.toLocaleString('en-US') : '-'; }
 function getApplicantCount(jobId) { return 15 + (jobId * 17 + 23) % 180; }
 function getHiringStage(jobId) { return (jobId * 13 + 7) % 5; }
 
