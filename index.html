@@ -83,7 +83,7 @@
         .filter-group { margin-bottom: 24px; }
         .filter-label { font-weight: 600; font-size: 0.9rem; color: var(--neutral-700); margin-bottom: 12px; display: block; }
         .filter-options { display: flex; flex-direction: column; gap: 6px; }
-        .filter-option { display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 10px 12px; border-radius: var(--radius-sm); transition: background 0.2s; user-select: none; }
+        .filter-option { display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 12px 14px; min-height: 44px; border-radius: var(--radius-sm); transition: background 0.2s; user-select: none; }
         .filter-option:hover { background: var(--neutral-50); }
         .filter-checkbox { width: 20px; height: 20px; border: 2px solid var(--neutral-300); border-radius: 5px; display: flex; align-items: center; justify-content: center; transition: all 0.2s; flex-shrink: 0; }
         .filter-option.selected .filter-checkbox { background: var(--primary-600); border-color: var(--primary-600); }
@@ -138,14 +138,15 @@
         .sort-select { padding: 10px 16px; padding-left: 36px; border: 1px solid var(--neutral-200); border-radius: var(--radius-md); font-size: 0.9rem; font-family: inherit; background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23737373' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat 12px center; cursor: pointer; appearance: none; }
         body.en .sort-select { padding-left: 16px; padding-right: 36px; background-position: calc(100% - 12px) center; }
         .view-toggles { display: flex; background: var(--neutral-100); border-radius: var(--radius-md); padding: 4px; }
-        .view-btn { padding: 8px 12px; border: none; background: transparent; cursor: pointer; border-radius: 6px; transition: all 0.2s; }
-        .view-btn svg { width: 18px; height: 18px; stroke: var(--neutral-500); }
+        .view-btn { padding: 10px 14px; min-width: 44px; min-height: 44px; border: none; background: transparent; cursor: pointer; border-radius: 6px; transition: all 0.2s; display: flex; align-items: center; justify-content: center; }
+        .view-btn svg { width: 20px; height: 20px; stroke: var(--neutral-500); }
         .view-btn.active { background: white; box-shadow: var(--shadow-sm); }
         .view-btn.active svg { stroke: var(--primary-700); }
+        .view-btn:hover:not(.active) { background: rgba(255,255,255,0.5); }
         .active-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
         .active-filter-tag { display: flex; align-items: center; gap: 6px; padding: 6px 12px; background: rgba(20,184,166,0.1); color: var(--primary-700); border-radius: 20px; font-size: 0.85rem; font-weight: 500; }
         .active-filter-tag button { background: none; border: none; cursor: pointer; padding: 0; display: flex; color: var(--primary-600); }
-        .jobs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; }
+        .jobs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
         .jobs-grid.list-view { grid-template-columns: 1fr; }
         .jobs-grid.list-view .job-card { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 20px; padding: 20px 24px; }
         .jobs-grid.list-view .job-card-header { margin-bottom: 0; }
@@ -169,11 +170,14 @@
         .job-card-info { flex: 1; min-width: 0; }
         .job-title { font-weight: 700; font-size: 1.1rem; color: var(--neutral-900); margin-bottom: 4px; line-height: 1.4; }
         .company-name { color: var(--neutral-500); font-size: 0.9rem; }
-        .job-card-bookmark { position: absolute; top: 20px; left: 20px; width: 36px; height: 36px; border: none; background: var(--neutral-50); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
-        body.en .job-card-bookmark { left: auto; right: 20px; }
-        .job-card-bookmark svg { width: 18px; height: 18px; stroke: var(--neutral-400); fill: none; transition: all 0.2s; }
-        .job-card-bookmark:hover { background: var(--accent-300); }
-        .job-card-bookmark.saved svg { fill: var(--accent-500); stroke: var(--accent-500); }
+        .job-card-bookmark { position: absolute; top: 16px; left: 16px; width: 44px; height: 44px; border: none; background: var(--neutral-50); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; z-index: 2; }
+        body.en .job-card-bookmark { left: auto; right: 16px; }
+        .job-card-bookmark svg { width: 20px; height: 20px; stroke: var(--neutral-400); fill: none; transition: all 0.2s; }
+        .job-card-bookmark:hover { background: rgba(20,184,166,0.15); }
+        .job-card-bookmark:hover svg { stroke: var(--primary-600); }
+        .job-card-bookmark.saved { background: rgba(239,68,68,0.1); }
+        .job-card-bookmark.saved svg { fill: #ef4444; stroke: #ef4444; }
+        .job-card-bookmark.saved:hover { background: rgba(239,68,68,0.2); }
         .job-meta { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
         .job-meta-item { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--neutral-500); }
         .job-meta-item svg { width: 16px; height: 16px; stroke: var(--neutral-400); }
@@ -192,7 +196,6 @@
         .job-date { font-size: 0.85rem; color: var(--neutral-400); }
         .apply-btn { padding: 10px 24px; background: linear-gradient(135deg, var(--primary-600), var(--primary-700)); color: white; border: none; border-radius: var(--radius-md); font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.2s; font-family: inherit; }
         .apply-btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
-        .linkedin-badge { display: inline-flex; align-items: center; gap: 4px; background: #0077b5; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; margin-top: 8px; }
 
         /* Pagination */
         .pagination { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 40px; }
@@ -278,8 +281,6 @@
         /* Modal Footer */
         .modal-footer { padding: 20px 32px; background: white; border-top: 1px solid var(--neutral-200); display: flex; gap: 12px; flex-wrap: wrap; border-radius: 0 0 var(--radius-xl) var(--radius-xl); }
         .modal-footer .apply-btn { flex: 1; justify-content: center; padding: 16px 28px; font-size: 1.05rem; min-width: 200px; }
-        .modal-footer .linkedin-btn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 16px 28px; background: #0077b5; color: white; border: none; border-radius: var(--radius-md); font-weight: 600; font-size: 1.05rem; cursor: pointer; text-decoration: none; transition: all 0.2s; }
-        .modal-footer .linkedin-btn:hover { background: #006097; }
 
         @media (max-width: 768px) {
             .modal-body { grid-template-columns: 1fr; }
@@ -435,7 +436,11 @@
         .company-filter-tab { display: flex; align-items: center; gap: 8px; padding: 12px 24px; border: 2px solid var(--neutral-200); border-radius: var(--radius-lg); background: white; font-family: inherit; font-size: 0.95rem; font-weight: 500; color: var(--neutral-600); cursor: pointer; transition: all 0.2s; }
         .company-filter-tab:hover { border-color: var(--primary-300); color: var(--primary-700); }
         .company-filter-tab.active { border-color: var(--primary-500); background: rgba(20,184,166,0.08); color: var(--primary-700); }
-        .tab-icon { font-size: 1.1rem; }
+        .tab-icon { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 6px; }
+        .tab-icon svg { width: 16px; height: 16px; }
+        .tab-icon.govt { background: rgba(13,148,136,0.15); color: var(--primary-600); }
+        .tab-icon.semi-govt { background: rgba(139,92,246,0.15); color: #7c3aed; }
+        .tab-icon.private { background: rgba(217,119,6,0.15); color: #d97706; }
         .tab-count { background: var(--neutral-100); padding: 2px 10px; border-radius: 20px; font-size: 0.8rem; color: var(--neutral-500); }
         .company-filter-tab.active .tab-count { background: var(--primary-100); color: var(--primary-700); }
 
@@ -556,6 +561,20 @@
             .hiring-stages-track { flex-wrap: wrap; gap: 12px; }
             .hiring-stage { flex: 0 0 calc(33% - 8px); max-width: none; }
             .stage-connector { display: none; }
+            /* Mini stages on job cards - mobile optimization */
+            .job-card-stages { padding: 10px; }
+            .mini-stages { flex-wrap: wrap; gap: 8px; justify-content: center; }
+            .mini-stage { flex: 0 0 auto; }
+            .mini-stage-connector { display: none; }
+            .mini-stage-label { font-size: 0.55rem; max-width: 45px; }
+            .mini-stage-dot { width: 22px; height: 22px; font-size: 0.6rem; }
+            .job-card-stages-title { font-size: 0.7rem; margin-bottom: 8px; }
+        }
+        @media (max-width: 400px) {
+            .jobs-grid { grid-template-columns: 1fr; }
+            .job-card { padding: 20px; }
+            .mini-stage-label { display: none; }
+            .mini-stages { gap: 6px; }
         }
     </style>
 </head>
@@ -804,17 +823,17 @@
                     <span class="tab-count" id="countAll">12</span>
                 </button>
                 <button class="company-filter-tab" data-sector="govt" onclick="filterCompanies('govt', this)">
-                    <span class="tab-icon govt">🏛️</span>
+                    <span class="tab-icon govt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/></svg></span>
                     <span data-ar="حكومي" data-en="Government">حكومي</span>
                     <span class="tab-count" id="countGovt">2</span>
                 </button>
                 <button class="company-filter-tab" data-sector="semi-govt" onclick="filterCompanies('semi-govt', this)">
-                    <span class="tab-icon semi-govt">🏢</span>
+                    <span class="tab-icon semi-govt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16M3 21h18M9 6h1M9 10h1M9 14h1M14 6h1M14 10h1M14 14h1"/></svg></span>
                     <span data-ar="شبه حكومي" data-en="Semi-Government">شبه حكومي</span>
                     <span class="tab-count" id="countSemiGovt">3</span>
                 </button>
                 <button class="company-filter-tab" data-sector="private" onclick="filterCompanies('private', this)">
-                    <span class="tab-icon private">💼</span>
+                    <span class="tab-icon private"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></span>
                     <span data-ar="خاص" data-en="Private">خاص</span>
                     <span class="tab-count" id="countPrivate">7</span>
                 </button>
@@ -836,9 +855,9 @@
     </div>
 
     <!-- JOB MODAL -->
-    <div class="modal-overlay" id="jobModal" onclick="if(event.target===this)closeModal()">
+    <div class="modal-overlay" id="jobModal" role="dialog" aria-modal="true" aria-labelledby="modalJobTitle" onclick="if(event.target===this)closeModal()">
         <div class="modal">
-            <button class="modal-close" onclick="closeModal()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+            <button class="modal-close" onclick="closeModal()" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
             <div class="modal-header"><div id="modalHeader"></div></div>
             <div class="modal-body" id="modalBody"></div>
             <div class="modal-footer" id="modalFooter"></div>
@@ -846,10 +865,10 @@
     </div>
 
     <!-- APPLY FORM MODAL -->
-    <div class="apply-modal-overlay" id="applyModal" onclick="if(event.target===this)closeApplyForm()">
+    <div class="apply-modal-overlay" id="applyModal" role="dialog" aria-modal="true" aria-labelledby="applyFormTitle" onclick="if(event.target===this)closeApplyForm()">
         <div class="apply-modal">
             <div class="apply-modal-header">
-                <button class="apply-modal-close" onclick="closeApplyForm()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+                <button class="apply-modal-close" onclick="closeApplyForm()" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
                 <h2 id="applyFormTitle"></h2>
                 <p id="applyFormJob" style="color:var(--neutral-500);margin-top:4px;"></p>
             </div>
@@ -887,8 +906,8 @@
     </div>
 
     <!-- SUCCESS TOAST -->
-    <div class="toast" id="successToast">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    <div class="toast" id="successToast" role="status" aria-live="polite" aria-atomic="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
         <span id="toastMessage"></span>
     </div>
 
@@ -910,7 +929,6 @@ const translations = {
     postedLabels: { ar: (d)=>d===0?'اليوم':d===1?'منذ يوم':d<=7?`منذ ${toArabicNum(d)} أيام`:'منذ أسبوع+', en: (d)=>d===0?'Today':d===1?'1 day ago':d<=7?`${d} days ago`:'1 week+' },
     noResults: { ar: {title:'لا توجد نتائج',desc:'جرب تغيير معايير البحث'}, en: {title:'No Results',desc:'Try changing your search criteria'} },
     apply: { ar: 'تقديم', en: 'Apply' },
-    viewLinkedIn: { ar: 'عرض في LinkedIn', en: 'View on LinkedIn' },
     jobDesc: { ar: 'وصف الوظيفة', en: 'Job Description' },
     requirements: { ar: 'المتطلبات', en: 'Requirements' },
     benefits: { ar: 'المزايا', en: 'Benefits' },
@@ -951,7 +969,7 @@ function setLanguage(lang) {
     renderFeaturedCompanies();
 }
 
-// Jobs Data with LinkedIn URLs
+// Jobs Data
 const jobsData = [
     {id:1,title:{ar:'أخصائي أمن سيبراني',en:'Senior Cybersecurity Engineer'},company:{ar:'شركة تقنية',en:'Tech Company'},companyShort:{ar:'تقنية',en:'Tech'},location:{ar:'الرياض',en:'Riyadh'},salaryMin:22000,salaryMax:35000,jobType:'fulltime',sector:'private',experience:'mid',specialization:'it',postedDays:1,linkedinUrl:'https://www.linkedin.com/jobs/view/4333750073/',description:{ar:'مسؤول عن حماية البنية التحتية الرقمية وتطوير استراتيجيات الأمن السيبراني.',en:'Responsible for protecting digital infrastructure and developing cybersecurity strategies.'},requirements:{ar:['خبرة 3+ سنوات في الأمن السيبراني','شهادات معتمدة (CISSP, CEH)','إجادة اللغة الإنجليزية'],en:['3+ years cybersecurity experience','Certifications (CISSP, CEH)','English proficiency']},benefits:{ar:['تأمين طبي شامل','بدل سكن','مكافأة سنوية'],en:['Comprehensive health insurance','Housing allowance','Annual bonus']}},
     {id:2,title:{ar:'مدير إداري',en:'Office Administrator'},company:{ar:'شركة كنز',en:'Kanz'},companyShort:{ar:'كنز',en:'Kanz'},location:{ar:'الرياض',en:'Riyadh'},salaryMin:10000,salaryMax:15000,jobType:'fulltime',sector:'private',experience:'entry',specialization:'hr',postedDays:2,linkedinUrl:'https://www.linkedin.com/jobs/view/4334633193/',description:{ar:'إدارة المهام الإدارية اليومية والتنسيق بين الأقسام.',en:'Manage daily administrative tasks and coordinate between departments.'},requirements:{ar:['شهادة جامعية','خبرة سنة في الإدارة','مهارات تنظيمية'],en:['University degree','1 year admin experience','Organizational skills']},benefits:{ar:['تأمين صحي','إجازات سنوية'],en:['Health insurance','Annual leave']}},
@@ -1007,7 +1025,7 @@ const companiesData = [
 let activeFilters = {keyword:'',location:'',jobTypes:[],sectors:[],experience:[],postedDate:null,specializations:[],salaryMin:3000,salaryMax:50000};
 let currentPage = 1;
 const jobsPerPage = 12;
-let savedJobs = [];
+let savedJobs = JSON.parse(sessionStorage.getItem('savedJobs') || '[]');
 
 // Company Logos as inline SVG data URLs (always work, no external dependencies)
 const companyLogos = {
@@ -1365,7 +1383,13 @@ function applyFilters() {
     if(activeFilters.experience.length) jobs = jobs.filter(j => activeFilters.experience.includes(j.experience));
     if(activeFilters.postedDate) { const d = translations.postedDate[currentLang].find(x=>x.id===activeFilters.postedDate); if(d) jobs = jobs.filter(j => j.postedDays <= d.days); }
     if(activeFilters.specializations.length) jobs = jobs.filter(j => activeFilters.specializations.includes(j.specialization));
-    jobs = jobs.filter(j => j.salaryMin >= activeFilters.salaryMin && j.salaryMax <= activeFilters.salaryMax);
+    // Filter jobs with salary range overlap (includes partial matches)
+    jobs = jobs.filter(j => {
+        if (!j.salaryMin && !j.salaryMax) return true;
+        const jobMin = j.salaryMin || 0;
+        const jobMax = j.salaryMax || 999999;
+        return jobMin <= activeFilters.salaryMax && jobMax >= activeFilters.salaryMin;
+    });
     const sort = document.getElementById('sortSelect').value;
     if(sort==='newest') jobs.sort((a,b)=>a.postedDays-b.postedDays);
     else if(sort==='salary-high') jobs.sort((a,b)=>b.salaryMax-a.salaryMax);
@@ -1384,8 +1408,8 @@ function renderJobs(jobs) {
         return;
     }
     grid.innerHTML = paginated.map((j,i) => `
-        <article class="job-card" style="animation-delay:${i*0.05}s" onclick="openJobModal(${j.id})">
-            <button class="job-card-bookmark ${savedJobs.includes(j.id)?'saved':''}" onclick="event.stopPropagation();toggleSave(${j.id},this)"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></button>
+        <article class="job-card" style="animation-delay:${i*0.05}s" role="button" tabindex="0" onclick="openJobModal(${j.id})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openJobModal(${j.id})}" aria-label="${j.title[currentLang]} - ${j.company[currentLang]}">
+            <button class="job-card-bookmark ${savedJobs.includes(j.id)?'saved':''}" onclick="event.stopPropagation();toggleSave(${j.id},this)" aria-label="${savedJobs.includes(j.id) ? 'Remove from saved' : 'Save job'}"><svg viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></button>
             <div class="job-card-header">
                 <div class="company-logo ${j.sector}">${j.companyShort[currentLang]}</div>
                 <div class="job-card-info"><h3 class="job-title">${j.title[currentLang]}</h3><p class="company-name">${j.company[currentLang]}</p></div>
@@ -1418,7 +1442,6 @@ function renderJobs(jobs) {
                 <div><div class="job-salary">${formatSalary(j.salaryMin)} - ${formatSalary(j.salaryMax)} <span>${translations.currency[currentLang]}</span></div><div class="job-date">${translations.postedLabels[currentLang](j.postedDays)}</div></div>
                 <button class="apply-btn" onclick="event.stopPropagation();openJobModal(${j.id})">${translations.apply[currentLang]}</button>
             </div>
-            ${j.linkedinUrl ? '<div class="linkedin-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>LinkedIn</div>' : ''}
         </article>
     `).join('');
     renderPagination(total);
@@ -1435,7 +1458,13 @@ function renderPagination(total) {
 
 function changePage(p) { currentPage = p; applyFilters(); document.querySelector('.jobs-section').scrollIntoView({behavior:'smooth'}); }
 
-function toggleSave(id, btn) { const i = savedJobs.indexOf(id); i>-1 ? savedJobs.splice(i,1) : savedJobs.push(id); btn.classList.toggle('saved'); renderProfile(); }
+function toggleSave(id, btn) {
+    const i = savedJobs.indexOf(id);
+    i > -1 ? savedJobs.splice(i, 1) : savedJobs.push(id);
+    sessionStorage.setItem('savedJobs', JSON.stringify(savedJobs));
+    btn.classList.toggle('saved');
+    renderProfile();
+}
 
 let currentJobForApplication = null;
 
@@ -1632,7 +1661,6 @@ function openJobModal(id) {
 
     document.getElementById('modalFooter').innerHTML = `
         <button class="apply-btn" onclick="openApplyForm()">${translations.apply[currentLang]}</button>
-        ${job.linkedinUrl ? `<a href="${job.linkedinUrl}" target="_blank" class="linkedin-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>${translations.viewLinkedIn[currentLang]}</a>` : ''}
     `;
 
     document.getElementById('jobModal').classList.add('open');
@@ -1777,29 +1805,43 @@ function updateCompanyCounts() {
 }
 
 function renderApplications() {
-    const apps = [{job:'مهندس برمجيات',company:'أرامكو',status:'reviewing',date:'2025-01-05'},{job:'محلل بيانات',company:'سدايا',status:'pending',date:'2025-01-08'}];
-    if(!apps.length) {
-        document.getElementById('applicationsList').innerHTML = `<div class="empty-state"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg><h3>${translations.noApps[currentLang].title}</h3><p>${translations.noApps[currentLang].desc}</p></div>`;
+    const apps = JSON.parse(sessionStorage.getItem('applications') || '[]');
+    const container = document.getElementById('applicationsList');
+    if (!container) return;
+
+    if (!apps.length) {
+        container.innerHTML = `<div class="empty-state"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg><h3>${translations.noApps[currentLang].title}</h3><p>${translations.noApps[currentLang].desc}</p></div>`;
         return;
     }
-    document.getElementById('applicationsList').innerHTML = apps.map(a => `
+
+    container.innerHTML = apps.map(a => `
         <div class="application-card">
-            <div class="company-logo private" style="width:50px;height:50px;">${a.company.slice(0,4)}</div>
-            <div style="flex:1"><h3 style="font-weight:600;margin-bottom:4px;">${a.job}</h3><p style="color:var(--neutral-500);font-size:0.9rem;">${a.company}</p></div>
+            <div class="company-logo private" style="width:50px;height:50px;">${(a.company || '').slice(0, 4)}</div>
+            <div style="flex:1">
+                <h3 style="font-weight:600;margin-bottom:4px;">${a.jobTitle || a.job}</h3>
+                <p style="color:var(--neutral-500);font-size:0.9rem;">${a.company}</p>
+                <p style="color:var(--neutral-400);font-size:0.8rem;">${new Date(a.appliedAt || a.date).toLocaleDateString(currentLang === 'ar' ? 'ar-SA' : 'en-US')}</p>
+            </div>
             <span class="application-status ${a.status}">${translations.statusLabels[currentLang][a.status]}</span>
         </div>
     `).join('');
 }
 
 function renderProfile() {
+    const apps = JSON.parse(sessionStorage.getItem('applications') || '[]');
+    const profile = JSON.parse(sessionStorage.getItem('profile') || '{}');
+    const name = profile.name || (currentLang === 'ar' ? 'مستخدم جديد' : 'New User');
+    const email = profile.email || 'user@example.com';
+    const initial = name.charAt(0);
+
     document.getElementById('profileCard').innerHTML = `
-        <div class="profile-avatar">م</div>
-        <h2 class="profile-name">${currentLang==='ar'?'محمد أحمد':'Mohammed Ahmed'}</h2>
-        <p class="profile-email">mohammed@email.com</p>
+        <div class="profile-avatar">${initial}</div>
+        <h2 class="profile-name">${name}</h2>
+        <p class="profile-email">${email}</p>
         <div class="profile-stats">
             <div><div class="profile-stat-value">${toArabicNum(savedJobs.length)}</div><div class="profile-stat-label">${translations.savedJobs[currentLang]}</div></div>
-            <div><div class="profile-stat-value">${toArabicNum(2)}</div><div class="profile-stat-label">${translations.applications[currentLang]}</div></div>
-            <div><div class="profile-stat-value">${toArabicNum(156)}</div><div class="profile-stat-label">${translations.profileViews[currentLang]}</div></div>
+            <div><div class="profile-stat-value">${toArabicNum(apps.length)}</div><div class="profile-stat-label">${translations.applications[currentLang]}</div></div>
+            <div><div class="profile-stat-value">${toArabicNum(savedJobs.length * 12 + apps.length * 8)}</div><div class="profile-stat-label">${translations.profileViews[currentLang]}</div></div>
         </div>
         <button class="btn btn-primary" style="width:100%;">${currentLang==='ar'?'تعديل الملف الشخصي':'Edit Profile'}</button>
     `;
