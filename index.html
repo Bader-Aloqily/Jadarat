@@ -6,29 +6,62 @@
     <title>جدارات - المنصة الوطنية الموحدة للتوظيف</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700;800;900&family=Cairo:wght@300;400;500;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-900: #0a4943; --primary-800: #0d5b54; --primary-700: #0f6d65;
-            --primary-600: #11867c; --primary-500: #14b8a6; --primary-400: #2dd4bf;
-            --primary-300: #5eead4; --accent-600: #c26510; --accent-500: #e07818;
-            --accent-400: #f59e0b; --neutral-900: #0f1419; --neutral-800: #1a1f25;
-            --neutral-700: #2d3339; --neutral-600: #4a5159; --neutral-500: #6b7280;
-            --neutral-400: #9ca3af; --neutral-300: #d1d5db; --neutral-200: #e5e7eb;
-            --neutral-100: #f3f4f6; --neutral-50: #f9fafb;
-            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px; --radius-xl: 20px;
+            /* Saudi-inspired teal palette */
+            --primary-900: #064239; --primary-800: #0a4943; --primary-700: #0d5b54;
+            --primary-600: #0f6d65; --primary-500: #11867c; --primary-400: #14b8a6;
+            --primary-300: #2dd4bf; --primary-200: #5eead4;
+            /* Rich gold/amber accents - Saudi elegance */
+            --gold-900: #7c5d10; --gold-800: #9c7413; --gold-700: #b8860b;
+            --gold-600: #d4af37; --gold-500: #e5be4d; --gold-400: #f0d26e;
+            --gold-300: #f5e29e; --gold-200: #faf1d0;
+            /* Warm sand tones */
+            --sand-100: #faf8f3; --sand-200: #f5f0e6; --sand-300: #ebe5d8;
+            /* Refined neutrals */
+            --neutral-900: #0f1419; --neutral-800: #1a1f25; --neutral-700: #2d3339;
+            --neutral-600: #4a5159; --neutral-500: #6b7280; --neutral-400: #9ca3af;
+            --neutral-300: #d1d5db; --neutral-200: #e5e7eb; --neutral-100: #f3f4f6;
+            --neutral-50: #fafafa;
+            /* Sophisticated shadows with warm tints */
+            --shadow-sm: 0 1px 3px 0 rgba(15, 20, 25, 0.08), 0 1px 2px -1px rgba(15, 20, 25, 0.06);
+            --shadow-md: 0 4px 8px -2px rgba(15, 20, 25, 0.1), 0 2px 4px -2px rgba(15, 20, 25, 0.06);
+            --shadow-lg: 0 12px 24px -4px rgba(15, 20, 25, 0.12), 0 4px 8px -4px rgba(15, 20, 25, 0.08);
+            --shadow-xl: 0 24px 40px -8px rgba(15, 20, 25, 0.16), 0 8px 16px -6px rgba(15, 20, 25, 0.1);
+            --shadow-2xl: 0 32px 64px -12px rgba(15, 20, 25, 0.22);
+            --shadow-gold: 0 8px 24px -4px rgba(212, 175, 55, 0.25);
+            /* Refined radii */
+            --radius-sm: 10px; --radius-md: 14px; --radius-lg: 18px; --radius-xl: 24px;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { background: var(--neutral-50); }
-        body { font-family: 'IBM Plex Sans Arabic', 'Tajawal', sans-serif; background: var(--neutral-50); color: var(--neutral-900); line-height: 1.6; min-height: 100vh; position: relative; }
-        body.en { font-family: 'Inter', sans-serif; direction: ltr; }
-        .pattern-bg { position: fixed; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; z-index: 0; opacity: 0.035; background: linear-gradient(135deg, rgba(17,134,124,0.02) 0%, rgba(20,184,166,0.03) 100%), url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%2311867c' stroke-width='1.5' opacity='0.4'%3E%3Cpath d='M40 10L70 40L40 70L10 40Z'/%3E%3Cpath d='M40 20L60 40L40 60L20 40Z'/%3E%3C/g%3E%3C/svg%3E"); background-size: 80px 80px; animation: patternShift 60s linear infinite; }
-        @keyframes patternShift { 0% { background-position: 0 0; } 100% { background-position: 80px 80px; } }
+        html { background: var(--sand-100); }
+        body {
+            font-family: 'Tajawal', 'Cairo', sans-serif;
+            background: var(--sand-100);
+            color: var(--neutral-900);
+            line-height: 1.65;
+            min-height: 100vh;
+            position: relative;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+        body.en { font-family: 'Inter', sans-serif; direction: ltr; letter-spacing: -0.02em; }
+
+        /* Saudi-inspired geometric pattern background */
+        .pattern-bg {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none; z-index: 0; opacity: 0.04;
+            background:
+                linear-gradient(135deg, rgba(212,175,55,0.03) 0%, rgba(15,109,101,0.04) 100%),
+                url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%230f6d65' stroke-width='1.2' opacity='0.5'%3E%3Cpath d='M60 10 L90 30 L90 50 L60 70 L30 50 L30 30 Z'/%3E%3Cpath d='M60 25 L80 38 L80 52 L60 65 L40 52 L40 38 Z'/%3E%3Cpath d='M60 40 L70 46 L70 54 L60 60 L50 54 L50 46 Z'/%3E%3Cpath d='M60 0 L60 10 M60 70 L60 80 M30 30 L22 22 M90 30 L98 22 M30 50 L22 58 M90 50 L98 58'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: 120px 120px;
+            animation: patternShift 80s linear infinite;
+        }
+        @keyframes patternShift {
+            0% { background-position: 0 0, 0 0; }
+            100% { background-position: 0 0, 120px 120px; }
+        }
 
         /* Header */
         .header { background: rgba(255,255,255,0.97); border-bottom: 1px solid var(--neutral-200); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px) saturate(180%); box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.3s ease; }
@@ -56,27 +89,148 @@
         .mobile-menu-btn { display: none; padding: 8px; background: none; border: none; cursor: pointer; }
         .mobile-menu-btn svg { width: 24px; height: 24px; stroke: var(--neutral-700); }
 
-        /* Hero */
-        .hero { background: linear-gradient(135deg, #0a4943 0%, #0f6d65 50%, #14b8a6 100%); padding: 60px 24px; position: relative; overflow: hidden; }
-        .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 50%, rgba(45,212,191,0.15), transparent 50%), radial-gradient(circle at 70% 50%, rgba(17,134,124,0.15), transparent 50%), url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='white' stroke-width='0.8' opacity='0.08'%3E%3Cpath d='M60 15L105 60L60 105L15 60Z'/%3E%3Cpath d='M60 30L90 60L60 90L30 60Z'/%3E%3C/g%3E%3C/svg%3E"); background-size: 120px 120px; animation: heroPattern 40s linear infinite; }
-        @keyframes heroPattern { 0% { transform: translateX(0) translateY(0); } 100% { transform: translateX(120px) translateY(120px); } }
-        .hero-content { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
-        .hero-title { font-family: 'Tajawal', sans-serif; font-size: 2.25rem; font-weight: 700; color: white; text-align: center; margin-bottom: 8px; }
-        body.en .hero-title { font-family: 'Inter', sans-serif; }
-        .hero-subtitle { color: rgba(255,255,255,0.8); text-align: center; margin-bottom: 32px; font-size: 1.1rem; }
-        .search-box { background: white; border-radius: var(--radius-xl); padding: 10px; display: flex; gap: 10px; box-shadow: 0 20px 40px rgba(0,0,0,0.15), 0 0 0 1px rgba(17,134,124,0.1); flex-wrap: wrap; transform: translateY(0); transition: all 0.3s ease; }
-        .search-box:focus-within { box-shadow: 0 24px 48px rgba(0,0,0,0.2), 0 0 0 2px rgba(17,134,124,0.2); transform: translateY(-2px); }
+        /* Hero - Saudi Elegance */
+        .hero {
+            background:
+                linear-gradient(165deg, rgba(212,175,55,0.12) 0%, transparent 40%),
+                linear-gradient(135deg, #064239 0%, #0a4943 30%, #0f6d65 70%, #11867c 100%);
+            padding: 72px 24px 84px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(212,175,55,0.15), transparent 45%),
+                radial-gradient(circle at 80% 70%, rgba(20,184,166,0.12), transparent 50%),
+                url("data:image/svg+xml,%3Csvg width='140' height='140' viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='white' stroke-width='1' opacity='0.06'%3E%3Cpath d='M70 15 L100 35 L100 60 L70 80 L40 60 L40 35 Z'/%3E%3Cpath d='M70 28 L92 42 L92 58 L70 72 L48 58 L48 42 Z'/%3E%3Ccircle cx='70' cy='50' r='12' stroke-width='0.8'/%3E%3Cpath d='M70 10 L70 20 M70 80 L70 90 M40 35 L32 27 M100 35 L108 27 M40 60 L32 68 M100 60 L108 68'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: 140px 140px;
+            background-position: 0 0;
+            animation: heroPattern 50s linear infinite;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg,
+                transparent,
+                rgba(212,175,55,0.6) 25%,
+                rgba(212,175,55,0.8) 50%,
+                rgba(212,175,55,0.6) 75%,
+                transparent
+            );
+        }
+        @keyframes heroPattern {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(140px, 140px); }
+        }
+        .hero-content { max-width: 980px; margin: 0 auto; position: relative; z-index: 1; }
+        .hero-title {
+            font-family: 'Tajawal', sans-serif;
+            font-size: 2.75rem;
+            font-weight: 900;
+            color: white;
+            text-align: center;
+            margin-bottom: 12px;
+            letter-spacing: -0.03em;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.2);
+            animation: titleReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+        }
+        @keyframes titleReveal {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        body.en .hero-title { font-family: 'Inter', sans-serif; font-weight: 800; }
+        .hero-subtitle {
+            color: rgba(255,255,255,0.92);
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.15rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            animation: titleReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s backwards;
+        }
+        .search-box {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 12px;
+            display: flex;
+            gap: 12px;
+            box-shadow:
+                0 24px 48px rgba(0,0,0,0.18),
+                0 0 0 1px rgba(212,175,55,0.15),
+                inset 0 1px 0 rgba(255,255,255,0.9);
+            flex-wrap: wrap;
+            transform: translateY(0);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            animation: searchReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards;
+        }
+        @keyframes searchReveal {
+            from { opacity: 0; transform: translateY(30px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .search-box:focus-within {
+            box-shadow:
+                0 32px 64px rgba(0,0,0,0.22),
+                0 0 0 2px rgba(212,175,55,0.4),
+                inset 0 1px 0 rgba(255,255,255,0.9);
+            transform: translateY(-3px);
+        }
         .search-field { flex: 1; min-width: 200px; position: relative; }
         .search-field input, .search-field select { width: 100%; padding: 16px 20px; padding-right: 48px; border: 2px solid transparent; border-radius: var(--radius-lg); font-size: 1rem; font-family: inherit; background: var(--neutral-50); transition: all 0.2s; appearance: none; }
         body.en .search-field input, body.en .search-field select { padding-right: 20px; padding-left: 48px; }
         .search-field input:focus, .search-field select:focus { outline: none; border-color: var(--primary-400); background: white; }
         .search-field-icon { position: absolute; right: 18px; top: 50%; transform: translateY(-50%); color: var(--neutral-400); pointer-events: none; }
         body.en .search-field-icon { right: auto; left: 18px; }
-        .search-btn { padding: 16px 40px; background: linear-gradient(135deg, #11867c 0%, #0f6d65 100%); color: white; border: none; border-radius: var(--radius-lg); font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); font-family: inherit; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 12px rgba(17,134,124,0.25); position: relative; overflow: hidden; }
-        .search-btn::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 100%); opacity: 0; transition: opacity 0.3s ease; }
-        .search-btn:hover { background: linear-gradient(135deg, #0f6d65 0%, #0a4943 100%); box-shadow: 0 6px 20px rgba(17,134,124,0.35); transform: translateY(-1px); }
+        .search-btn {
+            padding: 18px 44px;
+            background: linear-gradient(135deg, #0f6d65 0%, #064239 100%);
+            color: white;
+            border: none;
+            border-radius: var(--radius-lg);
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            font-family: inherit;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow:
+                0 8px 20px rgba(15,109,101,0.3),
+                0 0 0 1px rgba(212,175,55,0.2),
+                inset 0 1px 0 rgba(255,255,255,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        .search-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(212,175,55,0.25) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .search-btn:hover {
+            background: linear-gradient(135deg, #11867c 0%, #0f6d65 100%);
+            box-shadow:
+                0 12px 32px rgba(15,109,101,0.4),
+                0 0 0 2px rgba(212,175,55,0.4),
+                inset 0 1px 0 rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
         .search-btn:hover::before { opacity: 1; }
-        .search-btn:active { transform: translateY(0); box-shadow: 0 2px 8px rgba(17,134,124,0.25); }
+        .search-btn:active {
+            transform: translateY(0);
+            box-shadow:
+                0 4px 12px rgba(15,109,101,0.3),
+                0 0 0 1px rgba(212,175,55,0.2);
+        }
         .stats-bar { display: flex; justify-content: center; gap: 48px; margin-top: 32px; flex-wrap: wrap; }
         .stat-item { text-align: center; color: white; }
         .stat-value { font-family: 'Tajawal', sans-serif; font-size: 1.75rem; font-weight: 700; }
@@ -175,12 +329,58 @@
         .jobs-grid.list-view .job-card-stages { display: none; }
         .jobs-grid.list-view .job-card-applicants { display: none; }
 
-        /* Job Card */
-        .job-card { background: white; border-radius: var(--radius-xl); padding: 26px; border: 1px solid rgba(17,134,124,0.08); box-shadow: 0 2px 8px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06); transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; cursor: pointer; animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards; opacity: 0; }
-        .job-card::before { content: ''; position: absolute; top: 0; right: 0; width: 5px; height: 100%; background: linear-gradient(180deg, #14b8a6 0%, #0f6d65 100%); opacity: 0; transition: opacity 0.35s ease; }
+        /* Job Card - Saudi Elegance */
+        .job-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 28px;
+            border: 1px solid rgba(212,175,55,0.12);
+            box-shadow:
+                var(--shadow-md),
+                0 0 0 1px rgba(212,175,55,0.06),
+                inset 0 1px 0 rgba(255,255,255,0.8);
+            transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+        .job-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg,
+                rgba(212,175,55,0.8) 0%,
+                rgba(15,109,101,0.6) 50%,
+                rgba(212,175,55,0.8) 100%
+            );
+            opacity: 0;
+            transition: opacity 0.45s ease;
+        }
         body.en .job-card::before { right: auto; left: 0; }
-        .job-card::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at top right, rgba(20,184,166,0.03), transparent 60%); opacity: 0; transition: opacity 0.35s ease; pointer-events: none; }
-        .job-card:hover { border-color: rgba(20,184,166,0.25); box-shadow: 0 12px 32px rgba(17,134,124,0.12), 0 4px 12px rgba(0,0,0,0.08); transform: translateY(-4px); }
+        .job-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at top right, rgba(212,175,55,0.04), transparent 50%),
+                radial-gradient(circle at bottom left, rgba(15,109,101,0.03), transparent 50%);
+            opacity: 0;
+            transition: opacity 0.45s ease;
+            pointer-events: none;
+        }
+        .job-card:hover {
+            border-color: rgba(212,175,55,0.3);
+            box-shadow:
+                var(--shadow-xl),
+                0 0 0 2px rgba(212,175,55,0.2),
+                inset 0 1px 0 rgba(255,255,255,0.9);
+            transform: translateY(-5px);
+        }
         .job-card:hover::before { opacity: 1; }
         .job-card:hover::after { opacity: 1; }
         .job-card-header { display: flex; gap: 16px; margin-bottom: 16px; }
