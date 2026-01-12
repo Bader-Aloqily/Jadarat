@@ -24,7 +24,8 @@
             --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px; --radius-xl: 20px;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'IBM Plex Sans Arabic', 'Tajawal', sans-serif; background: var(--neutral-50); color: var(--neutral-900); line-height: 1.6; min-height: 100vh; }
+        html { background: var(--neutral-50); }
+        body { font-family: 'IBM Plex Sans Arabic', 'Tajawal', sans-serif; background: var(--neutral-50); color: var(--neutral-900); line-height: 1.6; min-height: 100vh; position: relative; }
         body.en { font-family: 'Inter', sans-serif; direction: ltr; }
         .pattern-bg { position: fixed; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; z-index: 0; opacity: 0.035; background: linear-gradient(135deg, rgba(17,134,124,0.02) 0%, rgba(20,184,166,0.03) 100%), url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%2311867c' stroke-width='1.5' opacity='0.4'%3E%3Cpath d='M40 10L70 40L40 70L10 40Z'/%3E%3Cpath d='M40 20L60 40L40 60L20 40Z'/%3E%3C/g%3E%3C/svg%3E"); background-size: 80px 80px; animation: patternShift 60s linear infinite; }
         @keyframes patternShift { 0% { background-position: 0 0; } 100% { background-position: 80px 80px; } }
@@ -230,9 +231,12 @@
         .pagination-btn svg { width: 18px; height: 18px; stroke: currentColor; }
 
         /* Modal - Redesigned */
-        .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.65); z-index: 1000; display: none; align-items: flex-start; justify-content: center; padding: 20px; backdrop-filter: blur(8px) saturate(120%); overflow-y: auto; }
+        .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 1000; display: none; align-items: flex-start; justify-content: center; padding: 20px; overflow-y: auto; }
         .modal-overlay.open { display: flex; animation: overlayFadeIn 0.3s ease; }
-        @keyframes overlayFadeIn { from { opacity: 0; backdrop-filter: blur(0px); } to { opacity: 1; backdrop-filter: blur(8px); } }
+        @keyframes overlayFadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @supports (backdrop-filter: blur(8px)) {
+            .modal-overlay { background: rgba(0,0,0,0.65); backdrop-filter: blur(8px) saturate(120%); }
+        }
         .modal { background: var(--neutral-50); border-radius: var(--radius-xl); max-width: 1000px; width: 100%; margin: 20px auto; position: relative; animation: modalIn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; box-shadow: 0 30px 60px rgba(0,0,0,0.25), 0 0 0 1px rgba(17,134,124,0.1); }
         @keyframes modalIn { from { opacity: 0; transform: scale(0.92) translateY(40px); } to { opacity: 1; transform: scale(1) translateY(0); } }
 
@@ -377,9 +381,12 @@
             .filters-sidebar.open { display: block; transform: translateX(0); animation: slideInFilter 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
             @keyframes slideInFilter { from { transform: translateX(-100%); } to { transform: translateX(0); } }
             body.en @keyframes slideInFilter { from { transform: translateX(100%); } to { transform: translateX(0); } }
-            .filter-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 1000; backdrop-filter: blur(6px); opacity: 0; transition: opacity 0.35s ease; }
+            .filter-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 1000; opacity: 0; transition: opacity 0.35s ease; }
             .filter-backdrop.open { display: block; opacity: 1; animation: backdropFadeIn 0.35s ease; }
             @keyframes backdropFadeIn { from { opacity: 0; } to { opacity: 1; } }
+            @supports (backdrop-filter: blur(6px)) {
+                .filter-backdrop { background: rgba(0,0,0,0.6); backdrop-filter: blur(6px); }
+            }
             .filters-sidebar .filters-header { position: sticky; top: 0; z-index: 10; margin: -24px -24px 24px -24px; padding: 20px 24px; padding-top: calc(20px + env(safe-area-inset-top)); border-bottom: 1px solid var(--neutral-200); background: white; }
             .filters-close-mobile { display: flex; }
             .filters-sidebar.open .filters-floating-close { display: flex; position: fixed; top: calc(70px + env(safe-area-inset-top)); left: 16px; width: 52px; height: 52px; background: linear-gradient(135deg, #11867c 0%, #0f6d65 100%); border: none; border-radius: 50%; box-shadow: 0 6px 20px rgba(17,134,124,0.4), 0 0 0 3px rgba(255,255,255,0.9); align-items: center; justify-content: center; z-index: 1002; cursor: pointer; transition: all 0.3s ease; animation: floatButtonIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both; }
@@ -585,8 +592,11 @@
         .job-card-applicants strong { color: var(--primary-700); }
 
         /* Apply Form Modal */
-        .apply-modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 1100; display: none; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(4px); }
+        .apply-modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 1100; display: none; align-items: center; justify-content: center; padding: 20px; }
         .apply-modal-overlay.open { display: flex; }
+        @supports (backdrop-filter: blur(4px)) {
+            .apply-modal-overlay { background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); }
+        }
         .apply-modal { background: white; border-radius: var(--radius-xl); max-width: 500px; width: 100%; max-height: 90vh; overflow-y: auto; animation: modalIn 0.3s ease; }
         .apply-modal-header { padding: 24px 24px 16px; border-bottom: 1px solid var(--neutral-200); position: relative; }
         .apply-modal-header h2 { font-size: 1.25rem; font-weight: 700; }
