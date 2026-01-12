@@ -1223,7 +1223,7 @@ function renderFeaturedJobs() {
         <div class="job-card" onclick="showJobModal(jobsData[${jobsData.indexOf(job)}])" style="animation-delay: ${index * 0.1}s; opacity: 1;">
             <div class="job-card-header">
                 <div class="company-logo ${job.sector}">
-                    ${logoUrl ? `<img src="${logoUrl}" alt="${job.company[currentLang]}" onerror="this.parentElement.innerHTML='${job.companyShort[currentLang]}'" style="width:100%;height:100%;object-fit:contain;">` : job.companyShort[currentLang]}
+                    ${logoUrl ? `<img src="${logoUrl}" alt="${job.company[currentLang]}" onerror="this.style.display='none';this.parentElement.innerHTML='${job.companyShort[currentLang].replace(/'/g, "&apos;")}'" style="width:100%;height:100%;object-fit:contain;padding:8px;">` : job.companyShort[currentLang]}
                 </div>
                 <div class="job-card-info">
                     <h3 class="job-title">${job.title[currentLang]}</h3>
@@ -1247,7 +1247,7 @@ function renderFeaturedJobs() {
                 <div class="mini-stages">
                     ${translations.hiringStages[currentLang].map((stage, i) => `
                         <div class="mini-stage ${i < getHiringStage(job.id) ? 'completed' : i === getHiringStage(job.id) ? 'active' : ''}">
-                            <div class="mini-stage-dot">${i < getHiringStage(job.id) ? '✓' : i + 1}</div>
+                            <div class="mini-stage-dot">${i < getHiringStage(job.id) ? '✓' : toArabicNum(i + 1)}</div>
                             <span class="mini-stage-label">${stage}</span>
                         </div>
                         ${i < 4 ? `<div class="mini-stage-connector ${i < getHiringStage(job.id) ? 'completed' : ''}"></div>` : ''}
@@ -1489,7 +1489,7 @@ function renderJobs(jobs) {
         <article class="job-card" style="animation-delay:${i*0.05}s" role="button" tabindex="0" onclick="openJobModal(${j.id})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openJobModal(${j.id})}" aria-label="${j.title[currentLang]} - ${j.company[currentLang]}">
             <button class="job-card-bookmark ${savedJobs.includes(j.id)?'saved':''}" onclick="event.stopPropagation();toggleSave(${j.id},this)" aria-label="${savedJobs.includes(j.id) ? 'Remove from saved' : 'Save job'}"><svg viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></button>
             <div class="job-card-header">
-                <div class="company-logo ${j.sector}">${logoUrl ? `<img src="${logoUrl}" alt="${j.company[currentLang]}" onerror="this.parentElement.innerHTML='${j.companyShort[currentLang]}'" style="width:100%;height:100%;object-fit:contain;">` : j.companyShort[currentLang]}</div>
+                <div class="company-logo ${j.sector}">${logoUrl ? `<img src="${logoUrl}" alt="${j.company[currentLang]}" onerror="this.style.display='none';this.parentElement.innerHTML='${j.companyShort[currentLang].replace(/'/g, "&apos;")}'" style="width:100%;height:100%;object-fit:contain;padding:8px;">` : j.companyShort[currentLang]}</div>
                 <div class="job-card-info"><h3 class="job-title">${j.title[currentLang]}</h3><p class="company-name">${j.company[currentLang]}</p></div>
             </div>
             <div class="job-meta">
@@ -1509,7 +1509,7 @@ function renderJobs(jobs) {
                 <div class="mini-stages">
                     ${translations.hiringStages[currentLang].map((stage, i) => `
                         <div class="mini-stage ${i < getHiringStage(j.id) ? 'completed' : i === getHiringStage(j.id) ? 'active' : ''}">
-                            <div class="mini-stage-dot">${i < getHiringStage(j.id) ? '✓' : i + 1}</div>
+                            <div class="mini-stage-dot">${i < getHiringStage(j.id) ? '✓' : toArabicNum(i + 1)}</div>
                             <span class="mini-stage-label">${stage}</span>
                         </div>
                         ${i < 4 ? `<div class="mini-stage-connector ${i < getHiringStage(j.id) ? 'completed' : ''}"></div>` : ''}
@@ -1727,7 +1727,7 @@ function openJobModal(id) {
                     <div class="hiring-stages-track">
                         ${stages.map((stage, i) => `
                             <div class="hiring-stage ${i < hiringStage ? 'completed' : i === hiringStage ? 'active' : ''}">
-                                <div class="stage-dot">${i < hiringStage ? '✓' : i + 1}</div>
+                                <div class="stage-dot">${i < hiringStage ? '✓' : toArabicNum(i + 1)}</div>
                                 <span class="stage-label">${stage}</span>
                             </div>
                             ${i < stages.length - 1 ? `<div class="stage-connector ${i < hiringStage ? 'completed' : ''}"></div>` : ''}
